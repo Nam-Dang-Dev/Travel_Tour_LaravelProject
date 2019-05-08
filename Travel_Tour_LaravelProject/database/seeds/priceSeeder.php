@@ -1,0 +1,28 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class priceSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    
+    public function run()
+    {
+        DB::table('prices')->insert([
+         ['more12' => '456445','5_to_12' => '45645',  '2_to_5' => "4545",'less2' => '45',  'description' => "Trẻ em từ 5 tuổi đến dưới 12 tuổi: 75% giá tour người lớn (không có chế độ giường riêng)."],
+         ['more12' => '456445','5_to_12' => '45645',  '2_to_5' => "4545",'less2' => '45',  'description' => "Trẻ em từ 5 tuổi đến dưới 12 tuổi: 75% giá tour người lớn (không có chế độ giường riêng)."],
+         
+         ['more12' => '456445','5_to_12' => '45645',  '2_to_5' => "4545",'less2' => '45',  'description' => "Trẻ em từ 5 tuổi đến dưới 12 tuổi: 75% giá tour người lớn (không có chế độ giường riêng)."],
+         
+         ['more12' => '456445','5_to_12' => '45645',  '2_to_5' => "4545",'less2' => '45',  'description' => "Trẻ em từ 5 tuổi đến dưới 12 tuổi: 75% giá tour người lớn (không có chế độ giường riêng)."],
+         ['more12' => '456445','5_to_12' => '45645',  '2_to_5' => "4545",'less2' => '45',  'description' => "Trẻ em từ 5 tuổi đến dưới 12 tuổi: 75% giá tour người lớn (không có chế độ giường riêng)."],
+         
+
+
+     ]);
+    }
+}
