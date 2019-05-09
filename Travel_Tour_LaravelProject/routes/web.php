@@ -60,3 +60,28 @@
 					'uses' 	=> 'PageController@Admin_reservation_view_detail',
 				]);    
 		});
+
+
+		//các route liên quan đến user
+Route::group(['prefix' => 'user/'], function () {
+	Route::get('index', [
+	'as' 	=> 'index',
+	'uses' 	=> 'PageController@index',
+	]);   
+	Route::get('detail', [
+	'as' 	=> 'detail',
+	'uses' 	=> 'PageController@detail',
+	]);  
+	Route::get('demo', [
+	'as' 	=> 'demo',
+	'uses' 	=> 'PageController@demo',
+	]);  
+	Route::get('checkout', [
+	'as' 	=> 'checkout',
+	'uses' 	=> 'PageController@checkout',
+	]);   
+	Route::get('profile', function () {
+	return view('user.pages.profile');
+});
+}); 
+
