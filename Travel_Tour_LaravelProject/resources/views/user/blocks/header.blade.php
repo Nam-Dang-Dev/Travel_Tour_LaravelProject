@@ -7,36 +7,24 @@
       <div class="site-mobile-menu-body"></div>
     </div>
     
-    <header style="position: fixed;" class="site-navbar container py-0 bg-white" role="banner">
+    <header class="site-navbar container py-0 bg-white" role="banner">
 
       <!-- <div class="container"> -->
         <div class="row align-items-center">
           
           <div class="col-6 col-xl-2">
             <h1 class="mb-0 site-logo"><a href="index.html" class="text-black mb-0">
-             <img height="100px;" src=" {{ asset('user/images/logo.png')}}" class="img-responsive" alt="Image"> </a></h1>
+             <img height="100px;" src="{{ asset('public/user/images/logo.png') }}" class="img-responsive" alt="Image"> </a></h1>
           </div>
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="index.html">Trang Chủ</a></li>
-                <li >
-                  <a href="about.html">Về Chúng Tôi</a>
-                </li>
+                <li class="active"><a href="{{route('index')}}">Trang Chủ</a></li>
+                <li><a href="contact.html">Về chúng tôi</a></li>
                 <li><a href="contact.html">Liên Hệ</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Phương Thức Trao Đổi <b class="caret"></b></a>
-                <ul class="dropdown-menu" style="text-align: center; color: black;">
-                  <li><a href="#">Đổi</a></li>
-                  <li><a href="#">Mua</a></li>
-                 
-                </ul>
-               </li>
-                <li class="ml-xl-3 login"><a href="login.html"><span class="border-left pl-xl-4"></span>Đăng Nhập</a></li>
-                <li><a href="register.html">Đăng Kí</a></li>
 
-                <li><a href="#" class="cta"><span class="bg-primary text-white rounded">+ Đăng Bài</span></a></li>
+                <a href="login.html"><button type="button" class="btn btn-info"> Đăng nhập</button></a>
               </ul>
             </nav>
           </div>
@@ -53,7 +41,7 @@
 
   
 
-    <div class="site-blocks-cover overlay" style="background-image: url('{!! asset('user/images/hero_2.jpg') !!}');" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover overlay" style="background-image: url(images/hero_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
@@ -63,35 +51,29 @@
             <div class="row justify-content-center mb-4">
               <div class="col-md-8 text-center">
                 <h1 class="" data-aos="fade-up">Nhanh, tiện lợi, cho bạn và cho mọi người</h1>
-                <p data-aos="fade-up" data-aos-delay="100">Trao đổi, mua bán đồ củ tất cả những gì bạn muốn.</p>
+                <p data-aos="fade-up" data-aos-delay="100"> Hãy đi những nơi bạn muốn</p>
               </div>
             </div>
 
             <div class="form-search-wrap" data-aos="fade-up" data-aos-delay="200">
               <form method="post">
                 <div class="row align-items-center">
-                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-4">
-                    <input type="text" class="form-control rounded" placeholder="Bạn muốn tìm thứ gì?">
+                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
+                    
+                      <input type="text" name="diemdi" placeholder="Điểm đi" style="width: 250px; height: 40px; padding-left: 20px" >
+                    
                   </div>
                   <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
-                    <div class="wrap-icon">
-                      <span class="icon icon-room"></span>
-                      <input type="text" class="form-control rounded" placeholder="Vị trí">
+                    <div class="select-wrap">
+                      <input type="text" name="diemden" placeholder="Điểm đến" style="width: 250px; height: 40px; padding-left: 20px" >
+                      
+                      </select>
                     </div>
                     
                   </div>
                   <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
                     <div class="select-wrap">
-                      <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
-                      <select class="form-control rounded" name="" id="">
-                        <option value="">Danh mục</option>
-                        <option value="">Đồ điện tử</option>
-                        <option value="">Sách &amp;  Báo Chí</option>
-                        <option value="">Đồ nội trợ</option>
-                        <option value="">Thời trang</option>
-                        <option value="">Đồ nội thất</option>
-                        <option value="">Khác</option>
-                      </select>
+                      <input type="date" id="start" name="trip-start" value="2018-07-22" min="2019-06-01" max="2019-12-31" style="width: 250px; height: 40px; padding-left: 20px">
                     </div>
                   </div>
                   <div class="col-lg-12 col-xl-2 ml-auto text-right">
@@ -105,4 +87,4 @@
           </div>
         </div>
       </div>
-    </div>  
+    </div> 

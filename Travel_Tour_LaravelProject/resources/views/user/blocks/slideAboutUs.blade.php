@@ -11,7 +11,7 @@
           <div>
             <div class="testimonial">
               <figure class="mb-4">
-                <img src="{{ asset('user/images/person_3.jpg')}}" alt="Image" class="img-fluid mb-3">
+                <img src="{{ asset('public/user/images/person_3.jpg')}}" alt="Image" class="img-fluid mb-3">
                 <p>John Smith</p>
               </figure>
               <blockquote>
@@ -22,7 +22,7 @@
           <div>
             <div class="testimonial">
               <figure class="mb-4">
-                <img src="{{ asset('user/images/person_2.jpg')}}" alt="Image" class="img-fluid mb-3">
+                <img src="{{ asset('public/user/images/person_2.jpg')}}" alt="Image" class="img-fluid mb-3">
                 <p>Christine Aguilar</p>
               </figure>
               <blockquote>
@@ -34,7 +34,7 @@
           <div>
             <div class="testimonial">
               <figure class="mb-4">
-                <img src="{{ asset('user/images/person_4.jpg')}}" alt="Image" class="img-fluid mb-3">
+                <img src="{{ asset('public/user/images/person_4.jpg')}}" alt="Image" class="img-fluid mb-3">
                 <p>Robert Spears</p>
               </figure>
               <blockquote>
@@ -46,7 +46,7 @@
           <div>
             <div class="testimonial">
               <figure class="mb-4">
-                <img src="{{ asset('user/images/person_5.jpg')}}" alt="Image" class="img-fluid mb-3">
+                <img src="{{ asset('public/user/images/person_5.jpg')}}" alt="Image" class="img-fluid mb-3">
                 <p>Bruce Rogers</p>
               </figure>
               <blockquote>

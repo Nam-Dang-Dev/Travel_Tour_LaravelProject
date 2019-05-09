@@ -47,5 +47,21 @@ class PageController extends Controller
                return view('admin.reservation.pages.view_detail');
          }
    //END ADMIN SITE
+
+
+
+
+         public function index(){
+         return view('user.pages.index');
+   }
+   public function detail(){
+         return view('user.pages.detail');
+   }
+   public function demo(){
+         return view('user.pages.demo');
+   }
+   public function checkout(){
+         return view('user.pages.checkout');
+   }
 }
  
