@@ -8,7 +8,8 @@ class tour extends Model
 {
 	
 	protected $table = 'tours';
-	protected $fillabel = ['id','name','departure_location','end_location','departure_day','departure_day','time','quantity_tourist','description','image','flight_id','price_id','category_id'];
+    protected $fillabel = ['id','name','departure_location','end_location','departure_day','departure_day','time','quantity_tourist','description','image','status','flight_id','price_id','category_id'];
+
 
 	public function category()
 	{

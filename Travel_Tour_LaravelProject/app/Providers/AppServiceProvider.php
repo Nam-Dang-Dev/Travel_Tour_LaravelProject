@@ -3,7 +3,8 @@
 namespace App\Providers;
 use Illuminate\Support\Facades\Schema; 
 use Illuminate\Support\ServiceProvider;
-
+use App\category;
+use App\tour;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -24,5 +25,16 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
          Schema::defaultStringLength(191); //NEW: Increase StringLength
-    }
-}
+         view()->composer('user.blocks.menu',function($view){
+            $category = category::all();
+           
+            $view->with('category',$category);
+           
+        });
+         view()->composer('user.blocks.header',function($view){
+            $category = category::all();
+            
+            $view->with('category',$category);
+        });
+     }
+ }
