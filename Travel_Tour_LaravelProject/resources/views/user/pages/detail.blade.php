@@ -1,5 +1,19 @@
 @extends('user.master')
 @section('Content')
+
+
+
+    @foreach ($tour as $book) 
+   
+    @isset($book->place->name)
+                    {{$book->place->name}}
+             @endisset
+
+
+
+    @endforeach
+
+
 	<div class="site-section">
       <div class="container">
         <div class="row">
@@ -244,21 +258,21 @@
               <h3 class="h5 text-black mb-3">CÁC TOUR TƯƠNG TỰ</h3>
               <h3 class="h5 text-black mb-3">Theo giá</h3>
               <div class="d-block d-md-flex listing vertical">
-                <a href="{{route('detail')}}" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
+                <a href="#" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
                 <div class="lh-content">
                   <span class="category">VIETNAM - NEPAL</span>
                   <a href="listings-single.html">$1000</a>
                 </div>
               </div>
               <div class="d-block d-md-flex listing vertical">
-                <a href="{{route('detail')}}" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
+                <a href="#" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
                 <div class="lh-content">
                   <span class="category">VIETNAM - NEPAL</span>
                   <a href="listings-single.html">$1000</a>
                 </div>
               </div>
               <div class="d-block d-md-flex listing vertical">
-                <a href="{{route('detail')}}" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
+                <a href="#" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
                 <div class="lh-content">
                   <span class="category">VIETNAM - NEPAL</span>
                   <a href="listings-single.html">$1000</a>
@@ -269,21 +283,21 @@
             <div class="mb-5">
               <h3 class="h5 text-black mb-3">Theo ngày khởi hành</h3>
               <div class="d-block d-md-flex listing vertical">
-                <a href="{{route('detail')}}" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
+                <a href="#" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
                 <div class="lh-content">
                   <span class="category">VIETNAM - NEPAL</span>
                   <a href="listings-single.html">15/05/2019 7:00</a>
                 </div>
               </div>
               <div class="d-block d-md-flex listing vertical">
-                <a href="{{route('detail')}}" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
+                <a href="#" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
                 <div class="lh-content">
                   <span class="category">VIETNAM - NEPAL</span>
                   <a href="listings-single.html">15/05/2019 7:00</a>
                 </div>
               </div>
               <div class="d-block d-md-flex listing vertical">
-                <a href="{{route('detail')}}" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
+                <a href="#" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
                 <div class="lh-content">
                   <span class="category">VIETNAM - NEPAL</span>
                   <a href="listings-single.html">15/05/2019 7:00</a>

@@ -10,8 +10,8 @@ class place extends Model
      protected $table = 'places';
 	protected $fillabel = ['id','name','image','description'];
 
-	public function place()
+	public function tour()
     {
-       return $this->belongsToMany('App\place', 'tour_places', 'tour_id', 'place_id');
+       return $this->belongsToMany('App\tour'); 
     }
 }
