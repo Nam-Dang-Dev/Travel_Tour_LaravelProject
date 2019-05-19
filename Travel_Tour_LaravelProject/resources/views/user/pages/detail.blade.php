@@ -1,19 +1,6 @@
 @extends('user.master')
 @section('Content')
 
-
-
-    @foreach ($tour as $book) 
-   
-    @isset($book->place->name)
-                    {{$book->place->name}}
-             @endisset
-
-
-
-    @endforeach
-
-
 	<div class="site-section">
       <div class="container">
         <div class="row">
@@ -21,8 +8,9 @@
             
             <div class="mb-4">
               <div class="slide-one-item home-slider owl-carousel">
-                <div><img src="https://du-lich.chudu24.com/f/m/1805/22/webp-net-resizeimage-85-1356473.jpg?w=800&h=500" alt="Image" class="img-fluid"></div>
-                <div><img src="https://du-lich.chudu24.com/f/m/1805/22/webp-net-resizeimage-85-1356473.jpg?w=800&h=500" alt="Image" class="img-fluid"></div>
+                @foreach ($place as $place) 
+                <div><img  src="{!! asset('public/user/images/'.$place->image) !!} " alt="Image" class="img-fluid" style="width: 800px; height: 500px;"></div>
+                 @endforeach
               </div>
             </div>
             
@@ -32,16 +20,16 @@
               <table class="table table-hover">
                 <thead >
                   <tr >
-                    <th style="border: 1px solid silver">Ngày đi: 15/05/2019 7:00</th>
-                    <th style="border: 1px solid silver">Đến: 16/05/2019 7:00</th>
-                    <th style="border: 1px solid silver">Chuyến bay: NHT02</th>
+                    <th style="border: 1px solid silver">Ngày đi:  </th>
+                    <th style="border: 1px solid silver">Ngày về</th>
+                    <th style="border: 1px solid silver">Chuyến bay</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td style="border: 1px solid silver">Ngày về: 25/05/2019 7:00</td>
-                    <td style="border: 1px solid silver">Đến: 26/05/2019 7:00</td>
-                    <td style="border: 1px solid silver">Chuyến bay: NHT01</td>
+                    <td style="border: 1px solid silver">{{$tour->departure_day}} </td>
+                    <td style="border: 1px solid silver">{{$tour->day_back}}  </td>
+                    <td style="border: 1px solid silver">{{$tour->name}}</td>
                   </tr>
                 </tbody>
               </table>
@@ -55,21 +43,24 @@
                     <th style="border: 1px solid silver">Tên khách sạn</th>
                     <th style="border: 1px solid silver">Địa chỉ</th>
                     <th style="border: 1px solid silver">Điện thoại</th>
-                    <th style="border: 1px solid silver">Website</th>
+                   
                   </tr>
                 </thead>
                 <tbody>
+                    @foreach($hotel as $hotel)
                   <tr>
-                    <td style="border: 1px solid silver">Mường Thanh</td>
-                    <td style="border: 1px solid silver">Sơn Trà, Đà Nẵng</td>
-                    <td style="border: 1px solid silver">01122233</td>
-                    <td style="border: 1px solid silver">muongthanhhotel.com</td>
+
+                    <td style="border: 1px solid silver">{{$hotel->name}}</td>
+                    <td style="border: 1px solid silver">{{$hotel->address}}</td>
+                    <td style="border: 1px solid silver">{{$hotel->phone}}</td>
+                   
                   </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
 
-            <div class="row" style="margin-top: 20px">
+             <!-- <div class="row" style="margin-top: 20px">
               <h4>Thông tin hướng dẫn viên</h4>
               <table class="table table-hover">
                 <thead >
@@ -105,7 +96,7 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
+            </div> -->
 
             <div class="row" style="margin-top: 20px">
               <h4>Giá tour và phụ thu phòng đơn</h4>
@@ -113,32 +104,70 @@
                 <thead >
                   <tr >
                     <th style="border: 1px solid silver">Độ tuổi khách</th>
-                    <th style="border: 1px solid silver">Giá tour bay</th>
-                    <th style="border: 1px solid silver">Giá tour dưới đất</th>
-
+                    <th style="border: 1px solid silver">Giá tour</th>
+                    
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td style="border: 1px solid silver">12 tuổi trở lên</td>
-                    <td style="border: 1px solid silver">$250</td>
-                    <td style="border: 1px solid silver">$200</td>
+                    <td style="border: 1px solid silver">
+                        @if ( $tour->promotion==0)
+                      <span>{!!  number_format($tour->more12) !!} đ </span>
+                      @else
+                      <?php $promotion = ($tour->more12 * (100 - $tour->promotion))/100  ?>
+                      <span style="color: red;"> {!!  number_format($promotion) !!} đ </span>
+                      
+                      @endif
+
+                    </td>
+                    
                   </tr>
                   <tr>
                     <td style="border: 1px solid silver">5 - 12 tuổi</td>
-                    <td style="border: 1px solid silver">$250</td>
-                    <td style="border: 1px solid silver">$100</td>
+                    <td style="border: 1px solid silver">
+                       @if ( $tour->promotion==0)
+                      <span>{!!  number_format($tour->from5_to_12) !!} đ </span>
+                      @else
+                      <?php $promotion = ($tour->from5_to_12 * (100 - $tour->promotion))/100  ?>
+                      <span style="color: red;"> {!!  number_format($promotion) !!} đ </span>
+                      
+                      @endif
+
+                    </td>
+                   
                   </tr>
                   <tr>
-                    <td style="border: 1px solid silver">Dưới 5 tuổi</td>
-                    <td style="border: 1px solid silver">$150</td>
-                    <td style="border: 1px solid silver">$0</td>
+                    <td style="border: 1px solid silver"> 2 - 5 tuổi</td>
+                    <td style="border: 1px solid silver">
+                      @if ( $tour->promotion==0)
+                      <span>{!!  number_format($tour->from5_to_12) !!} đ </span>
+                      @else
+                      <?php $promotion = ($tour->from5_to_12 * (100 - $tour->promotion))/100  ?>
+                      <span style="color: red;"> {!!  number_format($promotion) !!} đ </span>
+                      
+                      @endif
+
+                    </td>
+                   
                   </tr>
+
                   <tr>
-                    <td style="border: 1px solid silver">Phụ thu phòng đơn</td>
-                    <td style="border: 1px solid silver">$50</td>
-                    <td style="border: 1px solid silver">$50</td>
+                    <td style="border: 1px solid silver"> Nhỏ hơn 2 tuổi</td>
+                    <td style="border: 1px solid silver">
+                      @if ( $tour->promotion==0)
+                      <span>{!!  number_format($tour->less2) !!} đ </span>
+                      @else
+                      <?php $promotion = ($tour->less2 * (100 - $tour->promotion))/100  ?>
+                      <span style="color: red;"> {!!  number_format($promotion) !!} đ </span>
+                      
+                      @endif
+
+                    </td>
+                   
                   </tr>
+
+                  
                 </tbody>
               </table>
             </div>
@@ -184,63 +213,58 @@
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th>Mã tour:</th>
-                    <th>123MHNUJG</th>
+                    <th width="250px">Mã tour:</th>
+                    <th width="250px">{{$tour->id}}</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Khởi hành</td>
-                    <td>25/05/2019</td>
-                    <td><a href="">Ngày khác</a></td>    
+                    <td width="250px" >Khởi hành</td>
+                    <td width="350px">{{$tour->departure_day}}</td>
+                    
                   </tr>
                   <tr>
                     <td>Địa điểm</td>
-                    <td>Đà Nẵng</td>
-                    <td><a href="">5 ngày</a></td>    
+                    <td>{{$place->name}}</td>
+                 
+                  </tr>
+                  <tr>
+                    <td>Thời gian</td>
+                     <td><a href="#">{{$tour->time}}</a></td>    
+                  </tr>
+
+                  <tr>
+                    <td>Điểm tập trung</td>
+                     <td><a href="#">{{$tour->concentrate_place}}</a></td>    
                   </tr>
                 </tbody>
               </table>
             
-            <div class="mb-5">
-              <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review"></span>
-                  </p>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <p>Có 20 đánh giá</p>
-                </div>
-                
-
-              </div>
-            </div>
+            
 
             <div class="mb-5">
               <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <center><div style="border: 1px solid silver; color: red; font-weight: bold;">$1000</div></center>
-                  <center><div style="border: 1px solid silver">Chỗ còn nhận: 5</div></center>
+                  <center><div style="color: red; font-weight: bold;">
+
+                   
+                  @if ( $tour->promotion==0)
+                      <span>{!!  number_format($tour->more12) !!} đ </span>
+                      @else
+                      <?php $promotion = ($tour->more12 * (100 - $tour->promotion))/100  ?>
+                      <span style="color: red;"> {!!  number_format($promotion) !!} đ </span>
+                      
+                  @endif
+
+
+                  </div></center>
+                  <center><div>Chỗ còn nhận: {{$tour->quantity_tourist}}</div></center>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <a href="{{route('checkout')}}"><button type="button" style="width: 250px; height: 58px; background-color: pink;" >Đặt ngay</button></a>
+                  <a href="{{route('checkout')}}"><button type="button" style="width: 250px; height: 58px; background-color: red; color: white;" >ĐẶT NGAY</button></a>
                 </div>
               </div>
-              <div class="row" style="margin-top: 5px">
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <center><div style="border: 1px solid silver; color: skyblue; font-weight: bold">$900</div></center>
-                  <center><div style="border: 1px solid silver">Chỗ còn nhận: 5</div></center>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <button type="button" style="width: 250px; height: 58px; background-color: skyblue;" >Ưu đãi khi đăng kí trực tuyến</button>
-                </div>
-              </div>
+              
             </div>
 
             <div class="mb-5">
@@ -257,27 +281,17 @@
             <div class="mb-5">
               <h3 class="h5 text-black mb-3">CÁC TOUR TƯƠNG TỰ</h3>
               <h3 class="h5 text-black mb-3">Theo giá</h3>
+
+              @foreach($samePrice as $value)
               <div class="d-block d-md-flex listing vertical">
-                <a href="#" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
+                <<a href="#" ><img src="{!! asset('public/user/images/'.$samePrice->image) !!} "  class="img-responsive" alt="Image"></a>
                 <div class="lh-content">
                   <span class="category">VIETNAM - NEPAL</span>
                   <a href="listings-single.html">$1000</a>
                 </div>
               </div>
-              <div class="d-block d-md-flex listing vertical">
-                <a href="#" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
-                <div class="lh-content">
-                  <span class="category">VIETNAM - NEPAL</span>
-                  <a href="listings-single.html">$1000</a>
-                </div>
-              </div>
-              <div class="d-block d-md-flex listing vertical">
-                <a href="#" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
-                <div class="lh-content">
-                  <span class="category">VIETNAM - NEPAL</span>
-                  <a href="listings-single.html">$1000</a>
-                </div>
-              </div>
+              @endforeach
+             
             </div>
             
             <div class="mb-5">

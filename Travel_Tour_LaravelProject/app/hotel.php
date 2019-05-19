@@ -4,11 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class place extends Model
+class hotel extends Model
 {
-	
-	protected $table = 'places';
-	protected $fillabel = ['id','name','image','description'];
+    protected $table = 'hotels';
+	protected $fillabel = ['id','name','address','phone'];
 
 	public function tour()
 	{

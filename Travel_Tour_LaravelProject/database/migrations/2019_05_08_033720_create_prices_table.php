@@ -16,8 +16,8 @@ class CreatePricesTable extends Migration
         Schema::create('prices', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('more12');
-            $table->integer('5_to_12');
-            $table->integer('2_to_5');
+            $table->integer('from5_to_12');
+            $table->integer('from2_to_5');
             $table->integer('less2');
             $table->integer('promotion')->nullable();
             $table->string('description');
