@@ -283,40 +283,33 @@
               <h3 class="h5 text-black mb-3">Theo giá</h3>
 
               @foreach($samePrice as $value)
+               
               <div class="d-block d-md-flex listing vertical">
-                <<a href="#" ><img src="{!! asset('public/user/images/'.$samePrice->image) !!} "  class="img-responsive" alt="Image"></a>
+                <a href="#" ><img src="{!! asset('public/user/images/'.$value->image) !!} "  class="img-responsive" alt="Image" style="width: 100%; height: 150px "></a>
                 <div class="lh-content">
-                  <span class="category">VIETNAM - NEPAL</span>
-                  <a href="listings-single.html">$1000</a>
+                  <span class="category">{{$value->name}}</span>
+                  <a href="listings-single.html">{{  number_format($value->more12)}} đ</a>
                 </div>
               </div>
+
               @endforeach
              
             </div>
             
             <div class="mb-5">
               <h3 class="h5 text-black mb-3">Theo ngày khởi hành</h3>
+                @foreach($sameDate as $value)
+               
               <div class="d-block d-md-flex listing vertical">
-                <a href="#" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
+                <a href="#" ><img src="{!! asset('public/user/images/'.$value->image) !!} "  class="img-responsive" alt="Image" style="width: 100%; height: 150px "></a>
                 <div class="lh-content">
-                  <span class="category">VIETNAM - NEPAL</span>
-                  <a href="listings-single.html">15/05/2019 7:00</a>
+                  <span class="category">{{$value->name}}</span>
+                  <a href="listings-single.html">{{  number_format($value->more12)}} đ</a>
                 </div>
               </div>
-              <div class="d-block d-md-flex listing vertical">
-                <a href="#" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
-                <div class="lh-content">
-                  <span class="category">VIETNAM - NEPAL</span>
-                  <a href="listings-single.html">15/05/2019 7:00</a>
-                </div>
-              </div>
-              <div class="d-block d-md-flex listing vertical">
-                <a href="#" class="img d-block" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ya_s8juHYERVkRmDQbelCPsUz_qNF6tTiJ6bjZDNM9kBz0q5')"></a>
-                <div class="lh-content">
-                  <span class="category">VIETNAM - NEPAL</span>
-                  <a href="listings-single.html">15/05/2019 7:00</a>
-                </div>
-              </div>
+
+              @endforeach
+             
             </div>
             
 
@@ -326,7 +319,7 @@
       </div>
     </div>
 
-    <div class="site-section bg-light">
+   <!--  <div class="site-section bg-light">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-7 text-left border-primary">
@@ -540,7 +533,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 	
 
