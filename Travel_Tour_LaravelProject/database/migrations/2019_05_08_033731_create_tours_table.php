@@ -25,10 +25,12 @@ class CreateToursTable extends Migration
        $table->string('description',3000);
        $table->string('image');
        $table->integer('flight_id')->unsigned();
+      
        $table->integer('price_id')->unsigned();
        $table->integer('category_id')->unsigned();
        $table->integer('status');
        $table->timestamps();
+
        
        $table->foreign('price_id')->references('id')->on('prices')->onDelete('cascade');
        $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

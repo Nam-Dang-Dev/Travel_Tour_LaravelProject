@@ -68,7 +68,7 @@ Route::group(['prefix' => 'user/'], function () {
 		'as' 	=> 'indexUser',
 		'uses' 	=> 'TourController@indexUser',
 	]);   
-	Route::get('Tourdetail', [
+	Route::get('Tourdetail/{id}', [
 		'as' 	=> 'Tourdetail',
 		'uses' 	=> 'TourController@Tourdetail',
 	]);  

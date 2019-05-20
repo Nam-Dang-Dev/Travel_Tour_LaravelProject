@@ -25,7 +25,7 @@
 
 
           <div class="d-block d-md-flex listing vertical">
-            <a href="{{route('Tourdetail')}}" class="img d-block"><img src="{!! asset('public/user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="150px"></a>
+            <a href="{{route('Tourdetail',$value->id)}}" class="img d-block"><img src="{!! asset('public/user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="150px"></a>
             <div class="lh-content">
               <span class="category">{{$value->name}}</span>
               <a href="#" class="bookmark"><span class="icon-heart"></span></a>
@@ -33,12 +33,12 @@
                 <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                   <h3><a href="listings-single.html">
                     @if ( $value->promotion==0)
-                      <span>{!! $value->more12 !!} đ </span>
+                      <span>{!! number_format($value->more12) !!} đ </span>
                       @else
                       <?php $promotion = ($value->more12 * (100 - $value->promotion))/100  ?>
-                      <span style="color: red;"> {!! $promotion !!} đ </span>
-                      <strike>{!!$value->more12!!} đ</strike>
-                      @endif
+                      <span style="color: red;"> {!! number_format($promotion) !!} đ </span>
+                      <strike>{!!number_format($value->more12)!!} đ</strike>
+                    @endif
 
 
                   </a></h3>
@@ -114,11 +114,11 @@
     							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     								<h5 style="color: white">
                          @if ( $value->promotion==0)
-                      <span>{!! $value->more12 !!} đ </span>
+                      <span>{!! number_format($value->more12) !!} đ </span>
                       @else
                       <?php $promotion = ($value->more12 * (100 - $value->promotion))/100  ?>
-                      <span style="color: red;"> {!! $promotion !!} đ </span>
-                      <strike>{!!$value->more12!!} đ</strike>
+                      <span style="color: red;"> {!! number_format($promotion) !!} đ </span>
+                      <strike>{!! number_format($value->more12) !!} đ</strike>
                       @endif
 
 
@@ -157,11 +157,11 @@
     							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     								<h3 style="color: white">
                          @if ( $value->promotion==0)
-                      <span>{!! $value->more12 !!} đ </span>
+                      <span>{!! number_format($value->more12) !!} đ </span>
                       @else
                       <?php $promotion = ($value->more12 * (100 - $value->promotion))/100  ?>
-                      <span style="color: red;"> {!! $promotion !!} đ </span>
-                      <strike>{!!$value->more12!!} đ</strike>
+                      <span style="color: red;"> {!! number_format($promotion) !!} đ </span>
+                      <strike>{!!number_format($value->more12)!!} đ</strike>
                       @endif
 
 
@@ -221,11 +221,11 @@
       							<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
       								<h3><a href="listings-single.html">Giá: 
                            @if ( $value->promotion==0)
-                      <span>{!! $value->more12 !!} đ </span>
+                      <span>{!! number_format($value->more12) !!} đ </span>
                       @else
                       <?php $promotion = ($value->more12 * (100 - $value->promotion))/100  ?>
-                      <span style="color: red;"> {!! $promotion !!} đ </span>
-                      <strike style="padding-left: 33px;">{!!$value->more12!!} đ</strike>
+                      <span style="color: red;"> {!! number_format($promotion) !!} đ </span>
+                      <strike style="padding-left: 33px;">{!!number_format($value->more12)!!} đ</strike>
                       @endif
 
 
