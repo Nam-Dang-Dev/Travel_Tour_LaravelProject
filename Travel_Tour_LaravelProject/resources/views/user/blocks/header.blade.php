@@ -20,7 +20,7 @@
           <nav class="site-navigation position-relative text-right" role="navigation">
 
             <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-              <li class="active"><a href="{{route('index')}}">Trang Chủ</a></li>
+              <li class="active"><a href="{{route('indexUser')}}">Trang Chủ</a></li>
               <li class="has-children active">
                   <a href="#">Du lịch</a>
                   <ul class="dropdown">

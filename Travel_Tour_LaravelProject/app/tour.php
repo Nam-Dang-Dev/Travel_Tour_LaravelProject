@@ -23,7 +23,8 @@ class tour extends Model
 
     public function place()
     {
-        return $this->belongsToMany('App\place');
+        
+        return $this->belongsToMany('App\place', 'tour_places', 'tour_id', 'place_id');
     }
 
     public function price()
