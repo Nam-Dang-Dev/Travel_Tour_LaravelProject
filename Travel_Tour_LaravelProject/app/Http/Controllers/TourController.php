@@ -9,6 +9,7 @@ use App\tour;
 use App\flight;
 use App\hotel;
 use App\tour_hotel;
+use Cart;
 
 use DB;
 use Illuminate\Http\Request;
@@ -54,13 +55,21 @@ class TourController extends Controller
 		->whereDate('tours.departure_day',date('Y-m-d', strtotime($tour->departure_day)))
 		->paginate(3);
 		
-
-		
-		
-
-		
-		
 		return view('user.pages.detail',compact('place','tour','hotel','samePrice','sameDate'));
+	}
+
+	public function checkout($id){
+
+		$tour = DB::table('tours')
+		->join('prices', 'tours.price_id', '=', 'prices.id')
+		->where('tours.id',$id)
+		->select('tours.*', 'prices.more12', 'prices.from5_to_12', 'prices.from5_to_12', 'prices.less2','prices.promotion')
+		->first();
+
+
+		// Cart::add(['id' => $id, 'name' => '', 'qty' => 1, 'price' => 9.99, 'weight' => 550, 'options' => ['size' => 'large']]);
+
+		 return view('user.pages.checkout',compact('tour'));
 	}
 
 

@@ -76,9 +76,9 @@ Route::group(['prefix' => 'user/'], function () {
 		'as' 	=> 'demo',
 		'uses' 	=> 'PageController@demo',
 	]);  
-	Route::get('checkout', [
+	Route::get('checkout/{id}', [
 		'as' 	=> 'checkout',
-		'uses' 	=> 'PageController@checkout',
+		'uses' 	=> 'TourController@checkout',
 	]);   
 	Route::get('profile', function () {
 		return view('user.pages.profile');

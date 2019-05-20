@@ -1,145 +1,195 @@
 @extends('user.master')
 @section('Content')
-	<div class="container">
+<div class="container">
 
-<!-- Các bước book tour -->
-<div class="row" style="margin-bottom: 30px;">
-      <div class="col-md-4 col-sm-3" style="text-align: center;">
-        <p style="font-size: 16px; position: relative; left: 5px; padding-top: 5px">1. NHẬP THÔNG TIN</p>
-        <p style="font-size: 35px; color: #fc6600; margin-top: 12px"><i style="background: #fff; border-radius: 25px;" class="fa fa-check-circle"></i></p>
-      </div>
-      <div class="col-md-4 col-sm-3" style="text-align: center;">
-        <p style="font-size: 16px; position: relative; left: 5px; padding-top: 5px">2. VIETRAVEL XÁC NHẬN</p>
-        <p style="font-size: 35px; color: #d1d2e4; margin-top: 12px"><i style="background: #fff; border-radius: 25px;" class="fa fa-circle-thin"></i></p>
-      </div>
-      <div class="col-md-4 col-sm-3" style="text-align: center;">
-        <p style="font-size: 16px; position: relative; left: 5px; padding-top: 5px">3. THANH TOÁN</p>
-        <p style="font-size: 35px; color: #d1d2e4; margin-top: 12px"><i style="background: #fff; border-radius: 25px;" class="fa fa-circle-thin"></i></p>
-      </div>
+  <!-- Các bước book tour -->
+  <div class="row" style="margin-bottom: 30px;">
+    <div class="col-md-4 col-sm-3" style="text-align: center;">
+      <p style="font-size: 16px; position: relative; left: 5px; padding-top: 5px">1. NHẬP THÔNG TIN</p>
+      <p style="font-size: 35px; color: #fc6600; margin-top: 12px"><i style="background: #fff; border-radius: 25px;" class="fa fa-check-circle"></i></p>
+    </div>
+    <div class="col-md-4 col-sm-3" style="text-align: center;">
+      <p style="font-size: 16px; position: relative; left: 5px; padding-top: 5px">2. VIETRAVEL XÁC NHẬN</p>
+      <p style="font-size: 35px; color: #d1d2e4; margin-top: 12px"><i style="background: #fff; border-radius: 25px;" class="fa fa-circle-thin"></i></p>
+    </div>
+    <div class="col-md-4 col-sm-3" style="text-align: center;">
+      <p style="font-size: 16px; position: relative; left: 5px; padding-top: 5px">3. THANH TOÁN</p>
+      <p style="font-size: 35px; color: #d1d2e4; margin-top: 12px"><i style="background: #fff; border-radius: 25px;" class="fa fa-circle-thin"></i></p>
+    </div>
     
-</div><!-- end Các bước book tour -->
+  </div><!-- end Các bước book tour -->
 
-<!-- Thông tin tour -->
-<div class="row tour-info" style="margin-bottom: 60px">
-            <div class="col-xs-12">
-                <div class="row">
-                    <div class="t-info-left col-md-4 col-sm-12 left tour-info-mgr mg-bot10">
-                        <div class="tour-info-left-frame">
-                            <img src="https://travel.com.vn/Images/destination/tf_190322101808_907467.jpg" alt="Bangkok - Pattaya (Khách sạn 4* 3*, Tặng buffet Baiyoke Sky, Tour Tiêu Chuẩn)" style="width:100%;" />
-                            <div style="margin-top: 10px">
-                                <div class="row">
-                                  <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                                    <div style="text-align: center; border: 1px solid silver; height: 50px; width: 170px; line-height: 50px">
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>Số ngày
-                                        <span>5</span>
-                                 </div>
-                                   
-                                  </div>
-                                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                    <div style="text-align: center; border: 1px solid silver; height: 50px; width: 190px; line-height: 50px">
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>$1000
-                           
-                                 </div>
-                                   
-                                  </div>
-                                </div>
-                                
-                            </div>
-  
-                        </div>
-                    </div>
-                    <div class="col-md-8 col-sm-12 right tour-info-right-frame">
-                        <div class="row tour-info-right-frame1">
-                            <div class="col-xs-12">
-                                <div style="font-weight: bold;font-size:17.5px;margin-bottom: 10px;line-height: 22px; ">
-                                    <h5 style="font-weight: bold;">Bangkok - Pattaya (Khách sạn 4* & 3*, Tặng buffet Baiyoke Sky, Tour Tiêu Chuẩn)</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row tour-info-right-frame2" style="border: 1px solid silver;">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                    
-                                <div class="row" style="margin-top: 20px">
-                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                      Mã tour:
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                      FHGHH546
-                                    </div>
-                                </div>
-                                <div class="row" style="margin-top: 20px">
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                      Ngày khởi hành:
-                                    </div>
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                      25/05/2019
-                                    </div>
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                      <i>Ngày khác</i>
-                                    </div>
-                                </div>
-                                <div class="row" style="margin-top: 20px">
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                      Nơi khởi hành:
-                                    </div>
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                      Đà Nẵng
-                                    </div>
-                                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                                      Số chỗ còn nhận: <i>5</i>
-                                    </div>
-                                </div>
-                           </div>
-                        </div>
-                         <div class="row">
-                            <div class="col-xs-12" style="border: 1px solid silver;" >
-                                
-                                    <span style="display: table-cell;vertical-align: middle;line-height: 18px;color: #cd2c24; padding-top: 18px">
-                                        Khách nữ từ 55 tuổi trở lên, khách nam từ 60 tuổi trở lên đi tour một mình và khách mang thai trên 4 tháng (16 tuần) vui lòng đăng ký tour trực tiếp tại văn phòng của chúng tôi. Không áp dụng đăng ký tour online đối với khách từ 70 tuổi trở lên
-                                    </span>
-                                
-                            </div>
-                        </div>
-                    </div>
+  <!-- Thông tin tour -->
+  <div class="row tour-info" style="margin-bottom: 60px">
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="t-info-left col-md-4 col-sm-12 left tour-info-mgr mg-bot10">
+          <div class="tour-info-left-frame">
+            <img  src="{!! asset('public/user/images/'.$tour->image) !!} "  alt="" style="width:100%;" />
+            <div style="margin-top: 10px">
+              <div class="row">
+                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                  <div style="text-align: center; border: 1px solid silver; height: 50px; width: 170px; line-height: 50px">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>Số ngày: 
+                    <span> {{$tour->time}} </span>
+                  </div>
+
                 </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                  <div style="text-align: center; border: 1px solid silver; height: 50px; width: 190px; line-height: 50px; color: red;">
+                    <i class="fa fa-clock-o"  aria-hidden="true"></i> 
+                    @if ( $tour->promotion==0)
+                    <span>{!!  number_format($tour->more12) !!} đ </span>
+                    @else
+                    <?php $promotion = ($tour->more12 * (100 - $tour->promotion))/100  ?>
+                    <span style="color: red;"> {!!  number_format($promotion) !!} đ </span>
+
+                    @endif
+
+
+                  </div>
+
+                </div>
+              </div>
+
             </div>
-        </div> <!-- end Thông tin tour -->
+
+          </div>
+        </div>
+        <div class="col-md-8 col-sm-12 right tour-info-right-frame">
+          <div class="row tour-info-right-frame1">
+            <div class="col-xs-12">
+              <div style="font-weight: bold;font-size:17.5px;margin-bottom: 10px;line-height: 22px; text-align: center;">
+                <h5 style="font-weight: bold;">{{$tour->name}}</h5>
+              </div>
+            </div>
+          </div>
+          <div class="row tour-info-right-frame2" style="border: 1px solid silver;">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">                    
+              <div class="row" style="margin-top: 20px">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                  Mã tour:
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                 {{$tour->id}}
+               </div>
+             </div>
+             <div class="row" style="margin-top: 20px">
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                Ngày khởi hành:
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                {{$tour->departure_day}}
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+              </div>
+            </div>
+            <div class="row" style="margin-top: 20px">
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                Nơi khởi hành:
+              </div>
+              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+               {{$tour->departure_location}}
+             </div>
+             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              Số chỗ còn nhận: <i> {{$tour->quantity_tourist}}</i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 40px;">
+        <div class="col-xs-12" style="border: 1px solid silver;" >
+
+          <span style="display: table-cell;vertical-align: middle;line-height: 18px;color: #cd2c24; padding-top: 18px">
+            Khách nữ từ 55 tuổi trở lên, khách nam từ 60 tuổi trở lên đi tour một mình và khách mang thai trên 4 tháng (16 tuần) vui lòng đăng ký tour trực tiếp tại văn phòng của chúng tôi. Không áp dụng đăng ký tour online đối với khách từ 70 tuổi trở lên
+          </span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> <!-- end Thông tin tour -->
 
 <!-- Bảng giá tour cơ bản -->
- <div class="col-xs-12 text-center" style="margin: 40px 0 40px">
-  <span class="title" style="text-transform: uppercase;">Giá tour cơ bản</span></div>
- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
- <div class="row">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Từ 12 tuổi trở lên</th>
-        <th>Từ 5 - 12 tuổi</th>
-        <th>Dưới 5 tuổi</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Giá tour cơ bản</td>
-        <td>$1000</td>
-        <td>$800</td>
-        <td>$500</td>
-      </tr>
-      <tr>
-        <td>Phụ thu phí xăng dầu</td>
+<div class="col-xs-12 text-center" style="margin: 40px 0 40px">
+  <span class="title" style="text-transform: uppercase;"><b>Giá tour cơ bản</b></span></div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+   <div class="row">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Từ 12 tuổi trở lên</th>
+          <th>Từ 5 - 12 tuổi</th>
+          <th>Từ 2 - 5 tuổi</th>
+          <th>Dưới 2 tuổi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Giá tour cơ bản</td>
+          <td>
+           @if ( $tour->promotion==0)
+           <span>{!!  number_format($tour->more12) !!} đ </span>
+           @else
+           <?php $promotion = ($tour->more12 * (100 - $tour->promotion))/100  ?>
+           <span> {!!  number_format($promotion) !!} đ </span>
+
+           @endif
+
+         </td>
+         <td>
+           @if ( $tour->promotion==0)
+           <span>{!!  number_format($tour->from5_to_12) !!} đ </span>
+           @else
+           <?php $promotion = ($tour->from5_to_12 * (100 - $tour->promotion))/100  ?>
+           <span > {!!  number_format($promotion) !!} đ </span>
+
+           @endif
+
+
+
+         </td>
+         <td>
+           @if ( $tour->promotion==0)
+           <span>{!!  number_format($tour->from5_to_12) !!} đ </span>
+           @else
+           <?php $promotion = ($tour->from5_to_12 * (100 - $tour->promotion))/100  ?>
+           <span > {!!  number_format($promotion) !!} đ </span>
+
+           @endif
+
+         </td>
+         <td>
+           @if ( $tour->promotion==0)
+           <span>{!!  number_format($tour->less2) !!} đ </span>
+           @else
+           <?php $promotion = ($tour->less2 * (100 - $tour->promotion))/100  ?>
+           <span> {!!  number_format($promotion) !!} đ </span>
+
+           @endif
+
+         </td>
+       </tr>
+       <tr>
+        <td>Phụ thu phí</td>
+        <td>$0</td>
         <td>$0</td>
         <td>$0</td>
         <td>$0</td>
       </tr>
     </tbody>
   </table>
-    
- </div>
- </div><!-- end Bảng giá tour cơ bản -->
 
- <!-- nhập thông tin liên lạc của khách hàng -->
-<form action=""/>                
-<div class="col-xs-12 text-center" style="margin: 40px 0 40px">
+</div>
+</div><!-- end Bảng giá tour cơ bản -->
+
+<!-- nhập thông tin liên lạc của khách hàng -->
+
+<form action="" method="POST" role="form">
+ <div class="col-xs-12 text-center" style="margin: 40px 0 40px">
   <span class="title" style="text-transform: uppercase;">Thông tin liên lạc</span></div>
   <div class="col-xs-12 ">
     <div class="row">
@@ -327,68 +377,79 @@
       </div>
     </div> <!-- end nhập thông tin liên lạc của khách hàng -->
 
-<!-- chọn hình thức thanh toán -->    
-<div class="col-xs-12 text-center" style="margin: 40px 0 40px 0">
-    <span class="title" style="text-transform: uppercase;">Xin quý; khách vui lòng chọn hình thức thanh toán</span>
-</div>
-<div class="col-xs-12" style="margin-bottom: 30px">
-    <div style="border:1px solid #ccc;padding: 20px 30px 20px 30px">
+    <!-- chọn hình thức thanh toán -->    
+    <div class="col-xs-12 text-center" style="margin: 40px 0 40px 0">
+      <span class="title" style="text-transform: uppercase;">Xin quý; khách vui lòng chọn hình thức thanh toán</span>
+    </div>
+    <div class="col-xs-12" style="margin-bottom: 30px">
+      <div style="border:1px solid #ccc;padding: 20px 30px 20px 30px">
         <div class="radio">
-            <label style="display:none;"><input type="radio" class="chkPayment" name="paymentID" value="1"  /><label class="lb_r">Tiền mặt</label></label>
+          <label style="display:none;"><input type="radio" class="chkPayment" name="paymentID" value="1"  /><label class="lb_r">Tiền mặt</label></label>
         </div>
         <div class="radio">
-            <label style="display:none;"><input type="radio" class="chkPayment" name="paymentID" value="2" /><label class="lb_r">Chuyển khoản</label></label>
+          <label style="display:none;"><input type="radio" class="chkPayment" name="paymentID" value="2" /><label class="lb_r">Chuyển khoản</label></label>
         </div>
         <div class="radio">
-            <label><input type="radio" class="chkPayment" name="paymentID" value="9" checked=checked /><label class="lb_r">ATM / Internet Banking</label></label>
+          <label><input type="radio" class="chkPayment" name="paymentID" value="9" checked=checked /><label class="lb_r">ATM / Internet Banking</label></label>
         </div>
         <div class="radio">
-            <label><input type="radio" class="chkPayment" name="paymentID" value="15" /><label class="lb_r">Thẻ tín dụng </label> </label>
+          <label><input type="radio" class="chkPayment" name="paymentID" value="15" /><label class="lb_r">Thẻ tín dụng </label> </label>
         </div>
         <div class="row " style="padding-bottom:10px;display:none;" id="divCard">
-            <div style="margin-top: 5px; margin-left: 35px; font-weight: bold; color: #d57575;">
-                Quý khách vui lòng chọn loại thẻ
-                
+          <div style="margin-top: 5px; margin-left: 35px; font-weight: bold; color: #d57575;">
+            Quý khách vui lòng chọn loại thẻ
+
+          </div>
+          <div style="padding:15px; margin:0px 15px;">
+            <input id="cardType" name="cardType" type="hidden" value="visa">
+            <div card="visa" onclick="ChonLoaiThe('visa')" class="card_type f-left" style="margin-left:5px; cursor:pointer;height: 32px;">
+              <img src="/Content/themeOrange/img/thevisa.png" alt="visa">
             </div>
-            <div style="padding:15px; margin:0px 15px;">
-                <input id="cardType" name="cardType" type="hidden" value="visa">
-                <div card="visa" onclick="ChonLoaiThe('visa')" class="card_type f-left" style="margin-left:5px; cursor:pointer;height: 32px;">
-                    <img src="/Content/themeOrange/img/thevisa.png" alt="visa">
-                </div>
-                <div card="mastercard" onclick="ChonLoaiThe('mastercard')" class="card_type f-left mg-left" style="margin-left:5px; cursor:pointer;height: 32px;">
-                    <img src="/Content/themeOrange/img/master.png" alt="master">
-                </div>
-                <div card="jcb" onclick="ChonLoaiThe('jcb')" class="card_type f-left mg-left" style="margin-left:5px; cursor:pointer;height: 32px;">
-                    <img src="/Content/themeOrange/img/jcb.png" alt="jcb">
-                </div>
-                <div card="amex" onclick="ChonLoaiThe('amex')" class="card_type f-left mg-left" style="margin-left:5px; cursor:pointer;height: 32px;">
-                    <img src="/Content/themeOrange/img/amex.png" alt="amex">
-                </div>
+            <div card="mastercard" onclick="ChonLoaiThe('mastercard')" class="card_type f-left mg-left" style="margin-left:5px; cursor:pointer;height: 32px;">
+              <img src="/Content/themeOrange/img/master.png" alt="master">
             </div>
+            <div card="jcb" onclick="ChonLoaiThe('jcb')" class="card_type f-left mg-left" style="margin-left:5px; cursor:pointer;height: 32px;">
+              <img src="/Content/themeOrange/img/jcb.png" alt="jcb">
+            </div>
+            <div card="amex" onclick="ChonLoaiThe('amex')" class="card_type f-left mg-left" style="margin-left:5px; cursor:pointer;height: 32px;">
+              <img src="/Content/themeOrange/img/amex.png" alt="amex">
+            </div>
+          </div>
         </div>
         <div class="radio">
-            <label><input type="radio" class="chkPayment" name="paymentID" value="16"/><label class="lb_r">Thanh toán bằng quét QRCode</label></label>
+          <label><input type="radio" class="chkPayment" name="paymentID" value="16"/><label class="lb_r">Thanh toán bằng quét QRCode</label></label>
         </div>
         <div class="row " style="padding-bottom:10px;display:none;" id="divVNPay">
-            <div style="margin-top: 5px; margin-left: 35px; font-weight: bold; color: #d57575;">
-                Thẻ tín dụng (VISA/MASTER/JCB) / Thẻ ATM - Dịch vụ của VNPay
-            </div>
+          <div style="margin-top: 5px; margin-left: 35px; font-weight: bold; color: #d57575;">
+            Thẻ tín dụng (VISA/MASTER/JCB) / Thẻ ATM - Dịch vụ của VNPay
+          </div>
         </div>
-        
-        <div style="border:1px solid #ccc;padding: 20px 30px 20px 30px;text-align: justify;word-wrap: break-word;height: 150px;overflow-y: scroll;line-height: 22px">
-            <div id="conditionPayment"></div>
-        </div>
-    </div>
-</div>
-<!-- end chọn hình thức thanh toán -->  
-</div>
 
-	
+        <div style="border:1px solid #ccc;padding: 20px 30px 20px 30px;text-align: justify;word-wrap: break-word;height: 150px;overflow-y: scroll;line-height: 22px">
+          <div id="conditionPayment"></div>
+        </div>
+      </div>
+    </div>
+    <!-- end chọn hình thức thanh toán -->  
+  </div>
+
+
+  
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+
+
+
+
 
 @endsection
 
 @section('slideAboutUs')
-	@include('user.blocks.slideAboutUs')
+@include('user.blocks.slideAboutUs')
 
 @endsection
 
