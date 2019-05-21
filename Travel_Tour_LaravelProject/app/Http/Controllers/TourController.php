@@ -9,6 +9,7 @@ use App\tour;
 use App\flight;
 use App\hotel;
 use App\tour_hotel;
+use Cart;
 
 use DB;
 use Illuminate\Http\Request;
@@ -34,7 +35,7 @@ class TourController extends Controller
 		->where('tours.id',$id)
 		->select('tours.*', 'prices.more12', 'prices.from5_to_12', 'prices.from5_to_12', 'prices.less2','prices.promotion', 'flights.name', 'flights.departure_day','flights.day_back')
 		->first();
-	
+
 		$place = App\tour::find($id)->place()->get();
 		$hotel = App\tour::find($id)->hotel()->get();
 
@@ -43,24 +44,37 @@ class TourController extends Controller
 		->join('prices', 'tours.price_id', '=', 'prices.id')
 		->select('tours.*', 'prices.more12','prices.promotion')
 		->where('tours.status', 0)
-		 ->whereBetween('prices.more12', [$tour->more12 - (($tour->more12*10)/100), $tour->more12 + (($tour->more12*10)/100)])
-		 ->paginate(3);
+		->whereBetween('prices.more12', [$tour->more12 - (($tour->more12*10)/100), $tour->more12 + (($tour->more12*10)/100)])
+		->paginate(3);
 
 		
-		 $sameDate = DB::table('tours')
+		$sameDate = DB::table('tours')
 		->join('prices', 'tours.price_id', '=', 'prices.id')
 		->select('tours.*', 'prices.more12','prices.promotion')
 		->where('tours.status', 0)
 		->whereDate('tours.departure_day',date('Y-m-d', strtotime($tour->departure_day)))
 		->paginate(3);
 		
-
-		
-		
-
-		
-		
 		return view('user.pages.detail',compact('place','tour','hotel','samePrice','sameDate'));
+	}
+
+	
+
+	public function checkout($id){
+
+		$tour = DB::table('tours')
+		->join('prices', 'tours.price_id', '=', 'prices.id')
+		->where('tours.id',$id)
+		->select('tours.*', 'prices.more12', 'prices.from5_to_12', 'prices.from5_to_12', 'prices.less2','prices.promotion')
+		->first();
+		return view('user.pages.checkout.checkout',compact('tour'));
+	}
+
+	public function updateQuantity(Request $request){
+		$qty = $request->quantity;
+		echo $qty;
+
+		return view('user.pages.checkout.getInformationCustomer',compact('qty'));
 	}
 
 
