@@ -13,7 +13,7 @@
       <div class="row align-items-center">
 
         <div class="col-6 col-xl-2">
-          <h1 class="mb-0 site-logo"><a href="index.html" class="text-black mb-0">
+          <h1 class="mb-0 site-logo"><a href="{{route('indexUser')}}" class="text-black mb-0">
            <img height="100px;" src="{{ asset('public/user/images/logo.png') }}" class="img-responsive" alt="Image"> </a></h1>
          </div>
          <div class="col-12 col-md-10 d-none d-xl-block">
@@ -33,7 +33,7 @@
               <li><a href="contact.html">Về chúng tôi</a></li>
               <li><a href="contact.html">Liên Hệ</a></li>
 
-              <a href="login.html"><button type="button" class="btn btn-info"> Đăng nhập</button></a>
+              <a href="#"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal""> Đăng nhập</button></a>
             </ul>
           </nav>
         </div>
@@ -96,4 +96,131 @@
         </div>
       </div>
     </div>
-  </div> 
+  </div>
+    <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form action="#" class="p-5 bg-white" style="background-color:pink ">
+             
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="email">Email</label> 
+                  <input type="email" id="email" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="subject">Password</label> 
+                  <input type="password" id="subject" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-12">
+                  <p>No account yet? <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2"> Register</button></p>
+                </div>
+              </div>
+
+            
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Sign In" class="btn btn-primary py-2 px-4 text-white">
+                </div>
+              </div>
+            </form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Dăng ký  -->
+   <!-- The Modal -->
+  <div class="modal" id="myModal2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+           <form action="#" class="p-5 bg-white" style="background-color:pink ">
+              
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="name">Name</label> 
+                  <input type="name" id="name" class="form-control">
+                </div>
+              </div>
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="email">Email</label> 
+                  <input type="email" id="email" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="subject">Password</label> 
+                  <input type="password" id="subject" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="subject">Re-type Password</label> 
+                  <input type="password" id="subject" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-12">
+                  <p>Have an account? <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Log in</button></p>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Sign In" class="btn btn-primary py-2 px-4 text-white">
+                </div>
+              </div>
+
+  
+            </form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+

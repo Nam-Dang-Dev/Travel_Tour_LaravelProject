@@ -79,7 +79,12 @@ Route::group(['prefix' => 'user/'], function () {
 	Route::get('checkout', [
 		'as' 	=> 'checkout',
 		'uses' 	=> 'PageController@checkout',
-	]);   
+	]);  
+	Route::get('catePage/{id}', [
+		'as' 	=> 'catePage',
+		'uses' 	=> 'categoryController@catePage',
+	]); 
+
 	Route::get('profile', function () {
 		return view('user.pages.profile');
 	});
