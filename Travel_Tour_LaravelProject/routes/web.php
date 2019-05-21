@@ -80,8 +80,16 @@ Route::group(['prefix' => 'user/'], function () {
 		'as' 	=> 'checkout',
 		'uses' 	=> 'TourController@checkout',
 	]);   
+	Route::get('updateQuantity', [
+		'as' 	=> 'user/updateQuantity',
+		'uses' 	=> 'TourController@updateQuantity',
+	]);  
+
 	Route::get('profile', function () {
 		return view('user.pages.profile');
 	});
+
 }); 
+
+
 
