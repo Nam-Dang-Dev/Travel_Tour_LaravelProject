@@ -261,7 +261,7 @@
                   <center><div>Chỗ còn nhận: {{$tour->quantity_tourist}}</div></center>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <a href="{{route('checkout')}}"><button type="button" style="width: 250px; height: 58px; background-color: red; color: white;" >ĐẶT NGAY</button></a>
+                  <a href="{{route('checkout',$tour->id)}}"><button type="button" style="width: 230px; height: 58px; background-color: red; color: white;" >ĐẶT NGAY</button></a>
                 </div>
               </div>
               
