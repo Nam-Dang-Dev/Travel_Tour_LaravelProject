@@ -66,7 +66,5 @@ public function detail(){
 public function demo(){
    return view('user.pages.demo');
 }
-public function checkout(){
-   return view('user.pages.checkout');
-}
+
 }

@@ -41,7 +41,7 @@
                     @endif
 
 
-                  </a></h3>
+                  </a></h3> 
                 </div>
                 <div class="">
                   <h3>{{$value->quantity_tourist}} chỗ</h3>
