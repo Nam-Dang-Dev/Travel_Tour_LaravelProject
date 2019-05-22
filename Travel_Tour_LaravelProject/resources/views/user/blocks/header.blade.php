@@ -14,7 +14,7 @@
           
           <div class="col-6 col-xl-2">
             <h1 class="mb-0 site-logo"><a href="index.html" class="text-black mb-0">
-             <img height="100px;" src="{{ asset('public/user/images/logo.png') }}" class="img-responsive" alt="Image"> </a></h1>
+             <img height="100px;" src="http://barkada.ph/wp-content/uploads/2017/01/barkada.png" class="img-responsive" alt="Image"> </a></h1>
           </div>
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
@@ -40,8 +40,8 @@
     </header>
 
   
-
-    <div class="site-blocks-cover overlay" style="background-image: url(images/hero_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+@foreach($backgroundImages as $img)
+    <div class="site-blocks-cover " style="background-image: url({{$img->image}});" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
@@ -50,13 +50,14 @@
             
             <div class="row justify-content-center mb-4">
               <div class="col-md-8 text-center">
-                <h1 class="" data-aos="fade-up">Nhanh, tiện lợi, cho bạn và cho mọi người</h1>
-                <p data-aos="fade-up" data-aos-delay="100"> Hãy đi những nơi bạn muốn</p>
+                <h1 class="" data-aos="fade-up" style="color: red">{{$img->caption1}}</h1>
+                <p data-aos="fade-up" data-aos-delay="100" style="color: red"> {{$img->caption2}}</p>
               </div>
             </div>
 
-            <div class="form-search-wrap" data-aos="fade-up" data-aos-delay="200">
-              <form method="post">
+            <div class="form-search-wrap" data-aos="fade-up" data-aos-delay="300">
+              <form action="{{route('search')}}" method="POST" role="search" >
+              {{ csrf_field() }}
                 <div class="row align-items-center">
                   <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
                     
@@ -73,7 +74,7 @@
                   </div>
                   <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
                     <div class="select-wrap">
-                      <input type="date" id="start" name="trip-start" value="2018-07-22" min="2019-06-01" max="2019-12-31" style="width: 250px; height: 40px; padding-left: 20px">
+                      <input type="date" id="start" name="date" value="2018-07-22" min="2019-06-01" max="2019-12-31" style="width: 250px; height: 40px; padding-left: 20px">
                     </div>
                   </div>
                   <div class="col-lg-12 col-xl-2 ml-auto text-right">
@@ -88,3 +89,4 @@
         </div>
       </div>
     </div> 
+@endforeach

@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
           $this->call(priceSeeder::class);
     	
            $this->call(tourSeeder::class);
+           $this->call(backgroundImageSeeder::class);
+
 
     }
 }

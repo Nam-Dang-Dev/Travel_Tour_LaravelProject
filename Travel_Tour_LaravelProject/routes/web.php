@@ -82,6 +82,10 @@ Route::group(['prefix' => 'user/'], function () {
 	]);   
 	Route::get('profile', function () {
 	return view('user.pages.profile');
-});
+	});
+	Route::post('search', [
+	'as' 	=> 'search',
+	'uses' 	=> 'PageController@search',
+	]);  
 }); 
 
