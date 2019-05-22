@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\tour;
 
 class PageController extends Controller
 {
@@ -22,7 +23,8 @@ public function Admin_category_view_detail(){
 
       //2. Tour
 public function Admin_tour_index(){
-   return view('admin.tour.pages.index');
+   $tour = tour::all();
+   return view('admin.tour.pages.index', compact('tour'));
 }
 public function Admin_tour_add(){
    return view('admin.tour.pages.add');
@@ -30,8 +32,14 @@ public function Admin_tour_add(){
 public function Admin_tour_update(){
    return view('admin.tour.pages.update');
 }
-public function Admin_tour_view_detail(){
-   return view('admin.tour.pages.view_detail');
+public function Admin_tour_delete($id) {
+    $tour_del = tour::find($id);
+    $tour_del->delete($id);
+    return back()->with('success','Xóa tour thành công!');
+  }
+public function Admin_tour_view_detail($id){
+   $detail_tour = tour::find($id);
+   return view('admin.tour.pages.view_detail',compact('detail_tour'));
 }
       //2. reservation
 public function Admin_reservation_index(){

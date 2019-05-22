@@ -36,5 +36,10 @@ class AppServiceProvider extends ServiceProvider
             
             $view->with('category',$category);
         });
+
+        view()->composer('admin.tour.pages.index',function($view){ 
+           $tour = tour::all();  
+           $view->with('tour',$tour);              
+        }); 
      }
  }

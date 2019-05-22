@@ -22,30 +22,36 @@
 					<div class="row">
 						<div class="panel panel-default" >
 								<div class="panel-body" style="text-align: center;">
-									<img src="{{asset('admin/dist/img/dulichtrongnuoc.jpg')}}" style="width: 500px; height: 200px">
+									<img src="{!! asset('user/images/'.$detail_tour->image) !!}" style="width: 500px; height: 200px">
 								</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
 							<div class="form-group">
+							
 							<table class="table table-hover">
 								<tbody>
+								
 									<tr>
 										<th>Tên: </th>
-										<td>Đà Nẵng - Bà Nà - Cầu Vàng - Sơn Trà - KDL Thần Tài - Hội An - Đà Nẵng</td>
+										<td>{!! $detail_tour["name"] !!}</td>
 									</tr>
 									<tr>
 										<th style="width: 130px">Nơi khởi hành:</th>
-										<td>Hồ Chí Minh</td>
+										<td>{!! $detail_tour["departure_location"] !!}</td>
 									</tr>
 									<tr>
 										<th>Nơi kết thúc:</th>
-										<td>Đà Nẵng</td>
+										<td>{!! $detail_tour["end_location"] !!}</td>
 									</tr>
 									<tr>
 										<th>Nơi tập trung:</th>
-										<td>Cột số 5 Ga đi trong nước,sân bay Tân Sơn Nhất, TP.Hồ Chí Minh</td>
+										<td>{!! $detail_tour["end_location"] !!}</td>
+									</tr>
+									<tr>
+										<th>Ngày khởi hành:</th>
+										<td>{!! $detail_tour["departure_day"] !!}</td>
 									</tr>
 								</tbody>
 							</table>
@@ -57,23 +63,23 @@
 									<tbody>
 										<tr>
 											<th>Số ngày :</th>
-											<td>3</td>
+											<td>{!! $detail_tour["time"] !!}</td>
 										</tr>
 										<tr>
 											<th>Số lượng khách:</th>
-											<td>12</td>
+											<td>{!! $detail_tour["quantity_tourist"] !!}</td>
 										</tr>
 										<tr>
 											<th>Mã chuyến bay:</th>
-											<td>HCM-DN</td>
+											<td>{!! $detail_tour["flight_id"] !!}</td>
 										</tr>
 										<tr>
 											<th>Mã giá:</th>
-											<td>NL</td>
+											<td>{!! $detail_tour["price_id"] !!}</td>
 										</tr>
 										<tr>
 											<th>Mã loại tour:</th>
-											<td>TN</td>
+											<td>{!! $detail_tour["category_id"] !!}</td>
 										</tr>
 									</tbody>
 								</table>
@@ -85,12 +91,7 @@
 							<tbody>
 								<tr>
 									<th style="width: 130px">Mô tả:</th>
-									<td>
-											Quý khách tập trung tại cột số 5 Ga đi trong nước, sân bay Tân Sơn Nhất. Hướng dẫn viên hỗ trợ làm thủ tục cho đoàn đáp chuyến bay đi Đà Nẵng. Tại sân bay Đà Nẵng xe và HDV Vietravel đón đoàn đi tham quan: 
-											- Bán đảo Sơn Trà, viếng Chùa Linh Ứng - Nơi đây có tượng Phật Quan Thế Âm cao nhất Việt Nam, đứng nơi đây, Quý khách sẽ được chiêm ngưỡng toàn cảnh thành phố, núi rừng và biển đảo Sơn Trà một cách hoàn hảo nhất. 
-											- Phố Cổ Hội An - Chùa Cầu, Nhà Cổ Phùng Hưng, Hội Quán Phước Kiến, Cơ sở Thủ Công Mỹ Nghệ,…
-											- Tặng Show Ký Ức Hội An - Vở diễn thực cảnh ngoài trời với số lượng diễn viên đạt kỷ lục Việt Nam, tái hiện nhịp nhàng sinh động miền ký ức đa văn hóa: Champa, Bồ Đào Nha, Nhật, Trung… chứng kiến cuộc sống thôn quê bình dị bên dòng sông Hoài, khoảnh khắc hùng tráng trong lịch sử, nét hoàng kim của cảng thị một thời... và Công Viên Ấn tượng Hội An - Tái hiện Hội An của quá khứ, một cảng thị quốc tế sầm uất với sự hiện diện của các nền văn hóa Á, Âu, tìm hiểu nghề nuôi tằm ươm tơ, quay tơ dệt lụa bằng khung cửi, làm bánh đậu xanh Hội An, thưởng thức trà đạo phong cách Nhật Bản … Đoàn quay về lại Đà Nẵng, tự do nghỉ ngơi. Nghỉ đêm tại Đà Nẵng
-									</td>
+									<td>{!! $detail_tour["description"] !!}									</td>
 								</tr>
 							</tbody>
 						</table>
