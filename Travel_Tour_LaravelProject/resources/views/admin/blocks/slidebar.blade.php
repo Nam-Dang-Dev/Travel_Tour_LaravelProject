@@ -34,7 +34,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="{!! route('admin/tour/index') !!}"><i class="fa fa-circle-o"></i> Xem DS Tour</a></li>
-          <li><a href="{!! route('admin/tour/add') !!}"><i class="fa fa-circle-o"></i> Thêm Tour</a></li>
+          <li><a href="{!! route('admin/tour/get_add') !!}"><i class="fa fa-circle-o"></i> Thêm Tour</a></li>
         </ul>
       </li>
 

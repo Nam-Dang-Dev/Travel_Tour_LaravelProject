@@ -17,8 +17,18 @@
   <link rel="stylesheet" href="{{ asset('admin/dist/css/AdminLTE.min.css') }}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
    folder instead of downloading all of them to reduce the load. -->
+   
    <link rel="stylesheet" href="{{ asset('admin/dist/css/skins/_all-skins.min.css') }}">
-
+    <script src="{{asset('assets/js/lib/data-table/datatables.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/dataTables.bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/buttons.bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/jszip.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/vfs_fonts.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/buttons.html5.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/buttons.print.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/data-table/buttons.colVis.min.js')}}"></script>
+    <script src="{{asset('assets/js/init/datatables-init.js')}}"></script>
    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>

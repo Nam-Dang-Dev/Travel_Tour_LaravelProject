@@ -34,30 +34,46 @@ Route::group(['prefix' => 'admin/category/'], function () {
 Route::group(['prefix' => 'admin/tour/'], function () {
 	Route::get('index', [
 		'as' 	=> 'admin/tour/index',
-		'uses' 	=> 'PageController@Admin_tour_index',
+		'uses' 	=> 'TourController@Admin_tour_index',
 	]); 
+
 	Route::get('add', [
-		'as' 	=> 'admin/tour/add',
-		'uses' 	=> 'PageController@Admin_tour_add',
+		'as' 	=> 'admin/tour/get_add',
+		'uses' 	=> 'TourController@Admin_tour_get_add',
 	]);
-	Route::get('update', [
-		'as' 	=> 'admin/tour/update',
-		'uses' 	=> 'PageController@Admin_tour_update',
+	Route::post('add', [
+		'as' 	=> 'admin/tour/post_add',
+		'uses' 	=> 'TourController@Admin_tour_post_add',
 	]);
-	Route::get('view_detail', [
+
+	Route::get('update/{id}', [
+		'as' 	=> 'admin/tour/get_update',
+		'uses' 	=> 'TourController@Admin_tour_get_update',
+	]);
+	Route::post('update/{id}', [
+		'as' 	=> 'admin/tour/post_update',
+		'uses' 	=> 'TourController@Admin_tour_post_update',
+	]);
+
+	Route::get('delete/{id}', [
+		'as' 	=> 'admin/tour/delete',
+		'uses' 	=> 'TourController@Admin_tour_delete'
+	]);
+	
+	Route::get('view_detail/{id}', [
 		'as' 	=> 'admin/tour/view_detail',
-		'uses' 	=> 'PageController@Admin_tour_view_detail',
+		'uses' 	=> 'TourController@Admin_tour_view_detail',
 	]);    
 });
 	//2. Revervation
 Route::group(['prefix' => 'admin/reservation/'], function () {
 	Route::get('index', [
 		'as' 	=> 'admin/reservation/index',
-		'uses' 	=> 'PageController@Admin_reservation_index',
+		'uses' 	=> 'TourController@Admin_reservation_index',
 	]); 
 	Route::get('view_detail', [
 		'as' 	=> 'admin/reservation/view_detail',
-		'uses' 	=> 'PageController@Admin_reservation_view_detail',
+		'uses' 	=> 'TourController@Admin_reservation_view_detail',
 	]);    
 });
 
