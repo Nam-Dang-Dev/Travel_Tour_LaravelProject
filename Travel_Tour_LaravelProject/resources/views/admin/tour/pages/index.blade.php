@@ -44,7 +44,7 @@
 
 	                      	<tr>
 		                        <td width="150px">{!! $value["name"] !!}</td>
-		                        <td> <img style="width: 100px;height: 80px" src="{!! asset('user/images/'.$value->image) !!}"></td>
+		                        <td> <img style="width: 100px;height: 80px" src="{!! asset('public/user/images/'.$value->image) !!}"></td>
 		                        <td > {!! $value["departure_location"] !!}</td>
 		                        <td > {!! $value["end_location"] !!}</td>
 		                        <td > {!! $value["departure_day"] !!}</td>

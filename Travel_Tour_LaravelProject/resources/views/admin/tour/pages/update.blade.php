@@ -23,7 +23,7 @@
 					<div class="row">
 						<div class="panel panel-default" >
 								<div class="panel-body" style="text-align: center;">
-									<img style="width: 250px" src="{!! asset('user/images/'.$tour_update->image) !!}">
+									<img style="width: 250px" src="{!! asset('public/user/images/'.$tour_update->image) !!}">
 									<div style="margin-bottom: 50px"></div>
 									<p>Chọn hình ảnh<input id="filebutton" name="image" class="input-file" type="file" style="margin-left: 480px;" value="{!! old ('image',isset($tour_update)?$tour_update['image']:NULL) !!}">
 									</p>

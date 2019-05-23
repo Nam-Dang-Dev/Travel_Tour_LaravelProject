@@ -94,16 +94,16 @@ Route::group(['prefix' => 'user/'], function () {
 	]);  
 	Route::get('checkout/{id}', [
 		'as' 	=> 'checkout',
-    'uses' 	=> 'TourController@checkout',
-	
+		'uses' 	=> 'TourController@checkout',
+		
 	]);  
 	Route::get('catePage/{id}', [
 		'as' 	=> 'catePage',
 		'uses' 	=> 'categoryController@catePage',
 	]); 
 
-		
-	]);   
+	
+	
 	Route::get('updateQuantity', [
 		'as' 	=> 'user/updateQuantity',
 		'uses' 	=> 'TourController@updateQuantity',
@@ -113,6 +113,10 @@ Route::group(['prefix' => 'user/'], function () {
 	Route::get('profile', function () {
 		return view('user.pages.profile');
 	});
+	Route::post('search', [
+		'as' 	=> 'search',
+		'uses' 	=> 'PageController@search',
+	]);  
 
 }); 
 

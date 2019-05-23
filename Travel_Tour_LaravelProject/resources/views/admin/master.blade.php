@@ -4,21 +4,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Travel Tour</title>
-  <link rel="icon" type="image/ico" href="{{asset('admin/dist/img/travel-logo.jpg')}}" />
+  <link rel="icon" type="image/ico" href="{{asset('public/admin/dist/img/travel-logo.jpg')}}" />
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href=" {{ asset('admin/bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href=" {{ asset('public/admin/bootstrap/css/bootstrap.min.css') }}">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{ asset('admin/fonts/font-awesome.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('public/admin/fonts/font-awesome.min.css') }}">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="{{ asset('admin/fonts/ionicons.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('public/admin/fonts/ionicons.min.css') }}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('admin/dist/css/AdminLTE.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('public/admin/dist/css/AdminLTE.min.css') }}">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
    folder instead of downloading all of them to reduce the load. -->
+
    
-   <link rel="stylesheet" href="{{ asset('admin/dist/css/skins/_all-skins.min.css') }}">
+   <link rel="stylesheet" href="{{ asset('public/admin/dist/css/skins/_all-skins.min.css') }}">
     <script src="{{asset('assets/js/lib/data-table/datatables.min.js')}}"></script>
     <script src="{{asset('assets/js/lib/data-table/dataTables.bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/js/lib/data-table/dataTables.buttons.min.js')}}"></script>
@@ -29,6 +30,10 @@
     <script src="{{asset('assets/js/lib/data-table/buttons.print.min.js')}}"></script>
     <script src="{{asset('assets/js/lib/data-table/buttons.colVis.min.js')}}"></script>
     <script src="{{asset('assets/js/init/datatables-init.js')}}"></script>
+
+  
+
+
    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -259,16 +264,16 @@
  <!-- ./wrapper -->
 
  <!-- jQuery 2.2.3 -->
- <script src=" {{ asset('admin/plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
+ <script src=" {{ asset('public/admin/plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
  <!-- Bootstrap 3.3.6 -->
- <script src=" {{ asset('admin/bootstrap/js/bootstrap.min.js') }}"></script>
+ <script src=" {{ asset('public/admin/bootstrap/js/bootstrap.min.js') }}"></script>
  <!-- SlimScroll -->
- <script src=" {{ asset('admin/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
+ <script src=" {{ asset('public/admin/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
  <!-- FastClick -->
- <script src=" {{ asset('admin/plugins/fastclick/fastclick.js') }}"></script>
+ <script src=" {{ asset('public/admin/plugins/fastclick/fastclick.js') }}"></script>
  <!-- AdminLTE App -->
- <script src=" {{ asset('admin/dist/js/app.min.js') }}"></script>
+ <script src=" {{ asset('public/admin/dist/js/app.min.js') }}"></script>
  <!-- AdminLTE for demo purposes -->
- <script src=" {{ asset('admin/dist/js/demo.js') }}"></script>
+ <script src=" {{ asset('public/admin/dist/js/demo.js') }}"></script>
 </body>
 </html>

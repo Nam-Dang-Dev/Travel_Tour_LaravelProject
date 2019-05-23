@@ -49,11 +49,7 @@ class TourController extends Controller
 		->join('prices', 'tours.price_id', '=', 'prices.id')
 		->select('tours.*', 'prices.more12','prices.promotion')
 		->where('tours.status', 0)
-
-		 ->whereBetween('prices.more12', [$tour->more12 - (($tour->more12*10)/100), $tour->more12 + (($tour->more12*10)/100)])
-		 ->get();
-		return view('user.pages.detail',compact('place','tour','hotel','samePrice'));
-
+		 
 		->whereBetween('prices.more12', [$tour->more12 - (($tour->more12*10)/100), $tour->more12 + (($tour->more12*10)/100)])
 		->paginate(3);
 
