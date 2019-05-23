@@ -14,7 +14,7 @@ class CreateBackroundImagesTable extends Migration
     public function up()
     {
         Schema::create('backround_images', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('image');
             $table->string('caption1');
             $table->string('caption2');
