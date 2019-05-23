@@ -71,9 +71,8 @@ class TourController extends Controller
 	}
 
 	public function updateQuantity(Request $request){
-		$qty = $request->quantity;
-		echo $qty;
-
+		$qty = $request->qty;
+		
 		return view('user.pages.checkout.getInformationCustomer',compact('qty'));
 	}
 

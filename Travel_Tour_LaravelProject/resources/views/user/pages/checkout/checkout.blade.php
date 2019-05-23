@@ -114,7 +114,8 @@
 
 <!-- Bảng giá tour cơ bản -->
 <div class="col-xs-12 text-center" style="margin: 40px 0 40px">
-  <span class="title" style="text-transform: uppercase;"><b>Giá tour cơ bản</b></span></div>
+  <h3> <span class="title" style="text-transform: uppercase; color: red;"><b>Giá tour cơ bản</b></span></h3>
+ </div>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
    <div class="row">
     <table class="table table-hover">
@@ -190,20 +191,21 @@
 <div >
   <form action="" method="POST" role="form">
    <div class="col-xs-12 text-center" style="margin: 40px 0 40px">
-    <span class="title" style="text-transform: uppercase;">Thông tin liên lạc</span></div>
+    <h3><span class="title" style="text-transform: uppercase;color: red">Thông tin liên lạc</span></h3>
+    </div>
     <div class="col-xs-12 ">
       <div class="row">
         <div class="col-md-6 col-sm-12 col-xs-12">
           <div class="form-group">
-            <label>Họ tên: <span style="color: #cd2c24">*</span></label>
+            <label>Tên: <span style="color: #cd2c24">*</span></label>
             <div>
-              <input class="form-control" name="name" required="required" type="text" value="" />
+              <input class="form-control" name="firstName" required="required" type="text" value="" />
             </div>
           </div>
           <div class="form-group">
-            <label>Di động <span style="color: #cd2c24">*</span></label>
+            <label>Họ đệm<span style="color: #cd2c24">*</span></label>
             <div>
-              <input class="form-control" name="phone" required="required" type="text" value="" />
+              <input class="form-control" name="lastName" required="required" type="text" value="" />
             </div>
           </div>
           <div class="form-group">
@@ -228,30 +230,13 @@
           </div>
           <div class="form-group">
             <div class="row">
-              <div class="col-md-3 col-sm-3 mg-bot15">
-                <label>Người >12 tuổi</label>
+              <div class="col-md-12 col-sm-12 mg-bot15">
+                <label>Số lượng</label>
                 <div>
-                  <input class="form-control" name="lv1" id="lv1" onblur="updateQuantity()"  type="text" value="1" />
+                  <input class="form-control" name="quantity" id="quantity" onblur="updateQuantity()"  type="number" value="1" />
                 </div>
               </div>
-              <div class="col-md-3 col-sm-3 mg-bot15">
-                <label>Trẻ 5-12 tuổi</label>
-                <div>
-                  <input class="form-control" name="lv2" id="lv2"  onblur="updateQuantity()" type="text" value="0" />
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-3 mg-bot15">
-                <label>Trẻ 2-5 tuổi</label>
-                <div>
-                  <input class="form-control" name="lv3" id="lv3"  type="text" value="0" />
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-3 mg-bot15">
-                <label>Trẻ < 2 tuôi</label>
-                <div>
-                  <input class="form-control" name="lv4" id="lv4"  type="text" value="0" />
-                </div>
-              </div>
+             
             </div>
           </div>
         </div>
