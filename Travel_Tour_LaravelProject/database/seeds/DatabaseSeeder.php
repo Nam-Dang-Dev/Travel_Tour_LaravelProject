@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
       $this->call(categorySeeder::class);
       $this->call(userSeeder::class);
       $this->call(flightSeeder::class);
@@ -22,5 +23,7 @@ class DatabaseSeeder extends Seeder
       $this->call(tour_placeSeeder::class);
       $this->call(hotelSeeder::class);
       $this->call(tour_hotelSeeder::class);
+      $this->call(backgroundImageSeeder::class);
     }
   }
+
