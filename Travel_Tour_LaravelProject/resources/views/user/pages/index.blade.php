@@ -25,7 +25,7 @@
 
 
           <div class="d-block d-md-flex listing vertical">
-            <a href="{{route('Tourdetail',$value->id)}}" class="img d-block"><img src="{!! asset('user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="150px"></a>
+            <a href="{{route('Tourdetail',$value->id)}}" class="img d-block"><img src="{!! asset('public/user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="150px"></a>
             <div class="lh-content">
               <span class="category">{{$value->name}}</span>
               <a href="#" class="bookmark"><span class="icon-heart"></span></a>
@@ -105,7 +105,7 @@
     				
     				<div class="listing-item">
     					<div class="listing-image">
-    						<a href="#" class="img d-block"><img src="{!! asset('user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="150px"></a>
+    						<a href="#" class="img d-block"><img src="{!! asset('public/user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="150px"></a>
     					</div>
     					<div class="listing-item-content">
     						<a href="#" class="bookmark" data-toggle="tooltip" data-placement="left" title="Bookmark"><span class="icon-heart"></span></a>
@@ -148,7 +148,7 @@
     				
     				<div class="listing-item">
     					<div class="listing-image">
-    						  <a href="#" class="img d-block"><img src="{!! asset('user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="250px" style="height:350px; "></a>
+    						  <a href="#" class="img d-block"><img src="{!! asset('public/user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="250px" style="height:350px; "></a>
     					</div>
     					<div class="listing-item-content">
     						<a href="#" class="bookmark" data-toggle="tooltip" data-placement="left" title="Bookmark"><span class="icon-heart"></span></a>
@@ -213,7 +213,7 @@
       			<div class="col-lg-6">
              
       				<div class="d-block d-md-flex listing" >
-      					<a href="#" class="img d-block"><img src="{!! asset('user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="150px"></a>
+      					<a href="#" class="img d-block"><img src="{!! asset('public/user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="150px"></a>
       					<div class="lh-content">
       						<span class="category">{{$value->name}}</span>
       						<a href="#" class="bookmark"><span class="icon-heart"></span></a>

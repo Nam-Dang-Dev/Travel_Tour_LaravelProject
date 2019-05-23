@@ -22,7 +22,7 @@
 					<div class="row">
 						<div class="panel panel-default" >
 								<div class="panel-body" style="text-align: center;">
-									<img src="{!! asset('user/images/'.$detail_tour->image) !!}" style="width: 500px; height: 200px">
+									<img src="{!! asset('public/user/images/'.$detail_tour->image) !!}" style="width: 500px; height: 200px">
 								</div>
 						</div>
 					</div>

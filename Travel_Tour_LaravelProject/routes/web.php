@@ -103,7 +103,7 @@ Route::group(['prefix' => 'user/'], function () {
 	]); 
 
 		
-	]);   
+	  
 	Route::get('updateQuantity', [
 		'as' 	=> 'user/updateQuantity',
 		'uses' 	=> 'TourController@updateQuantity',
