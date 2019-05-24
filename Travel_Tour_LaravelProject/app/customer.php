@@ -18,4 +18,9 @@ class customer extends Model
     {
        return $this->hasMany('App\reservations', 'cus_id', 'id');
     }
+
+    public function reservations()
+    {
+        return $this->belongsToMany('App\reservations'); 
+    }
 }
