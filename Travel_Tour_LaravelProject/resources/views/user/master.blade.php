@@ -109,8 +109,38 @@
   <script src="{{ asset('public/user/js/main.js') }}"></script>
   <script src="{{ asset('public/user/js/myAjax.js') }}"></script>
   <script src='https://cdn.jsdelivr.net/npm/sweetalert2'></script>
+  <script>
+   function updateQuantity() {
 
- 
+    var quantity = parseInt(document.getElementById("quantity").value);
+    alert(quantity);
+    if(quantity <=0)
+      { 
+        error("Số lượng phải lớn hơn 0!"); 
+        document.getElementById("quantity").value = 1;
+
+      }
+      else {
+
+        $.ajax({
+          type: "GET",
+          url:"{{route('user/updateQuantity')}}",  
+          data: "qty=" + quantity,
+          success: function (data) {
+           
+            $('#EnterInformation').html(data);
+          },
+          error: function (data) {
+            console.log('Error:', data);
+          }
+        });
+      }
+
+
+    };
+
+  </script>
+
 
 </body>
 
