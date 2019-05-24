@@ -19,4 +19,14 @@ class reservations extends Model
 	{
 		 return $this->belongsTo('App\tour', 'tour_id', 'id');
 	}
+	public function contact()
+    {
+       return $this->hasMany('App\contact', 'contact_id', 'id');
+    }
+
+    public function customer()
+    {
+        
+        return $this->belongsToMany('App\customer', 'reservations_customer', 'reservations_id', 'customer_id');
+    }
 }

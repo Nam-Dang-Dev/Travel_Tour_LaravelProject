@@ -48,10 +48,10 @@
 
   </header>
 
-
+ 
 
   @foreach($backgroundImages as $img)
-  <div class="site-blocks-cover " style="background-image: url({{$img->image}});" data-aos="fade" data-stellar-background-ratio="0.5">
+  <div class="site-blocks-cover " style="background-image: url({!! asset('public/image/'.$img->image) !!} );" data-aos="fade" data-stellar-background-ratio="0.5">
 
     <div class="container">
       <div class="row align-items-center justify-content-center text-center">
