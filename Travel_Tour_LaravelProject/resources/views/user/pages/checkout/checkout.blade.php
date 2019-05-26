@@ -5,7 +5,7 @@
   <!-- Các bước book tour -->
   <div class="row" style="margin-bottom: 30px;">
     <div class="col-md-4 col-sm-3" style="text-align: center;">
-      <p style="font-size: 16px; position: relative; left: 5px; padding-top: 5px">1. NHẬP THÔNG TIN</p>
+      <p style="font-size: 16px; position: relative; left: 5px; padding-top: 5px;color: red;"><b>1. NHẬP THÔNG TIN</b></p>
       <p style="font-size: 35px; color: #fc6600; margin-top: 12px"><i style="background: #fff; border-radius: 25px;" class="fa fa-check-circle"></i></p>
     </div>
     <div class="col-md-4 col-sm-3" style="text-align: center;">
@@ -115,83 +115,84 @@
 <!-- Bảng giá tour cơ bản -->
 <div class="col-xs-12 text-center" style="margin: 40px 0 40px">
   <h3> <span class="title" style="text-transform: uppercase; color: red;"><b>Giá tour cơ bản</b></span></h3>
- </div>
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-   <div class="row">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Từ 12 tuổi trở lên</th>
-          <th>Từ 5 - 12 tuổi</th>
-          <th>Từ 2 - 5 tuổi</th>
-          <th>Dưới 2 tuổi</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Giá tour cơ bản</td>
-          <td>
-           @if ( $tour->promotion==0)
-           <span>{!!  number_format($tour->more12) !!} đ </span>
-           @else
-           <?php $promotion = ($tour->more12 * (100 - $tour->promotion))/100  ?>
-           <span> {!!  number_format($promotion) !!} đ </span>
-
-           @endif
-
-         </td>
-         <td>
-           @if ( $tour->promotion==0)
-           <span>{!!  number_format($tour->from5_to_12) !!} đ </span>
-           @else
-           <?php $promotion = ($tour->from5_to_12 * (100 - $tour->promotion))/100  ?>
-           <span > {!!  number_format($promotion) !!} đ </span>
-
-           @endif
-
-
-
-         </td>
-         <td>
-           @if ( $tour->promotion==0)
-           <span>{!!  number_format($tour->from5_to_12) !!} đ </span>
-           @else
-           <?php $promotion = ($tour->from5_to_12 * (100 - $tour->promotion))/100  ?>
-           <span > {!!  number_format($promotion) !!} đ </span>
-
-           @endif
-
-         </td>
-         <td>
-           @if ( $tour->promotion==0)
-           <span>{!!  number_format($tour->less2) !!} đ </span>
-           @else
-           <?php $promotion = ($tour->less2 * (100 - $tour->promotion))/100  ?>
-           <span> {!!  number_format($promotion) !!} đ </span>
-
-           @endif
-
-         </td>
-       </tr>
-       <tr>
-        <td>Phụ thu phí</td>
-        <td>$0</td>
-        <td>$0</td>
-        <td>$0</td>
-        <td>$0</td>
-      </tr>
-    </tbody>
-  </table>
-
 </div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+ <div class="row">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Từ 12 tuổi trở lên</th>
+        <th>Từ 5 - 12 tuổi</th>
+        <th>Từ 2 - 5 tuổi</th>
+        <th>Dưới 2 tuổi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Giá tour cơ bản</td>
+        <td>
+         @if ( $tour->promotion==0)
+         <span>{!!  number_format($tour->more12) !!} đ </span>
+         @else
+         <?php $promotion = ($tour->more12 * (100 - $tour->promotion))/100  ?>
+         <span> {!!  number_format($promotion) !!} đ </span>
+
+         @endif
+
+       </td>
+       <td>
+         @if ( $tour->promotion==0)
+         <span>{!!  number_format($tour->from5_to_12) !!} đ </span>
+         @else
+         <?php $promotion = ($tour->from5_to_12 * (100 - $tour->promotion))/100  ?>
+         <span > {!!  number_format($promotion) !!} đ </span>
+
+         @endif
+
+
+
+       </td>
+       <td>
+         @if ( $tour->promotion==0)
+         <span>{!!  number_format($tour->from5_to_12) !!} đ </span>
+         @else
+         <?php $promotion = ($tour->from5_to_12 * (100 - $tour->promotion))/100  ?>
+         <span > {!!  number_format($promotion) !!} đ </span>
+
+         @endif
+
+       </td>
+       <td>
+         @if ( $tour->promotion==0)
+         <span>{!!  number_format($tour->less2) !!} đ </span>
+         @else
+         <?php $promotion = ($tour->less2 * (100 - $tour->promotion))/100  ?>
+         <span> {!!  number_format($promotion) !!} đ </span>
+
+         @endif
+
+       </td>
+     </tr>
+     <tr>
+      <td>Phụ thu phí</td>
+      <td>$0</td>
+      <td>$0</td>
+      <td>$0</td>
+      <td>$0</td>
+    </tr>
+  </tbody>
+</table>
+
+</div> 
 </div><!-- end Bảng giá tour cơ bản -->
 
 <!-- nhập thông tin liên lạc của khách hàng -->
 <div >
-  <form action="" method="POST" role="form">
-   <div class="col-xs-12 text-center" style="margin: 40px 0 40px">
-    <h3><span class="title" style="text-transform: uppercase;color: red">Thông tin liên lạc</span></h3>
+  <form action="{{route('cart/user/postAddCart',[$tour->id,$tour->name])}}" method="POST" role="form">
+    <input type="hidden" name="_token" value="{!! csrf_token() !!}" />
+    <div class="col-xs-12 text-center" style="margin: 40px 0 40px">
+      <h3><span class="title" style="text-transform: uppercase;color: red">Thông tin liên lạc</span></h3>
     </div>
     <div class="col-xs-12 ">
       <div class="row">
@@ -236,7 +237,7 @@
                   <input class="form-control" name="quantity" id="quantity" onblur="updateQuantity()"  type="number" value="1" />
                 </div>
               </div>
-             
+
             </div>
           </div>
         </div>
@@ -266,7 +267,7 @@
       </div>
     </div>
     <div  id="EnterInformation">
-        @include('user.pages.checkout.getInformationCustomer')
+      @include('user.pages.checkout.getInformationCustomer')
     </div>
     
 
@@ -274,57 +275,22 @@
 </div>
 
 <!-- chọn hình thức thanh toán -->    
-<div class="col-xs-12 text-center" style="margin: 40px 0 40px 0">
-  <span class="title" style="text-transform: uppercase;">Xin quý; khách vui lòng chọn hình thức thanh toán</span>
-</div>
-<div class="col-xs-12" style="margin-bottom: 30px">
-  <div style="border:1px solid #ccc;padding: 20px 30px 20px 30px">
-    <div class="radio">
-      <label style="display:none;"><input type="radio" class="chkPayment" name="paymentID" value="1"  /><label class="lb_r">Tiền mặt</label></label>
-    </div>
-    <div class="radio">
-      <label style="display:none;"><input type="radio" class="chkPayment" name="paymentID" value="2" /><label class="lb_r">Chuyển khoản</label></label>
-    </div>
-    <div class="radio">
-      <label><input type="radio" class="chkPayment" name="paymentID" value="9" checked=checked /><label class="lb_r">ATM / Internet Banking</label></label>
-    </div>
-    <div class="radio">
-      <label><input type="radio" class="chkPayment" name="paymentID" value="15" /><label class="lb_r">Thẻ tín dụng </label> </label>
-    </div>
-    <div class="row " style="padding-bottom:10px;display:none;" id="divCard">
-      <div style="margin-top: 5px; margin-left: 35px; font-weight: bold; color: #d57575;">
-        Quý khách vui lòng chọn loại thẻ
+<div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 text-center" style="margin: 40px 0 40px 0">
+  <span class="title" style="text-transform: uppercase;">Xin quý khách vui lòng chọn hình thức thanh toán</span>
 
-      </div>
-      <div style="padding:15px; margin:0px 15px;">
-        <input id="cardType" name="cardType" type="hidden" value="visa">
-        <div card="visa" onclick="ChonLoaiThe('visa')" class="card_type f-left" style="margin-left:5px; cursor:pointer;height: 32px;">
-          <img src="/Content/themeOrange/img/thevisa.png" alt="visa">
+  <div class="col-xs-12" style="margin-bottom: 30px">
+    <div style="border:1px solid #ccc;padding: 20px 30px 20px 30px; text-align: left;">
+      <div class="form-group">
+        <div class="radio">
+          <label ><input type="radio" class="chkPayment" name="paymentID" value="1"  /><label class="lb_r">Tiền mặt</label></label>
         </div>
-        <div card="mastercard" onclick="ChonLoaiThe('mastercard')" class="card_type f-left mg-left" style="margin-left:5px; cursor:pointer;height: 32px;">
-          <img src="/Content/themeOrange/img/master.png" alt="master">
-        </div>
-        <div card="jcb" onclick="ChonLoaiThe('jcb')" class="card_type f-left mg-left" style="margin-left:5px; cursor:pointer;height: 32px;">
-          <img src="/Content/themeOrange/img/jcb.png" alt="jcb">
-        </div>
-        <div card="amex" onclick="ChonLoaiThe('amex')" class="card_type f-left mg-left" style="margin-left:5px; cursor:pointer;height: 32px;">
-          <img src="/Content/themeOrange/img/amex.png" alt="amex">
+        <div class="radio">
+          <label ><input type="radio" class="chkPayment" name="paymentID" value="2" /><label class="lb_r">Thanh toán online</label></label>
         </div>
       </div>
-    </div>
-    <div class="radio">
-      <label><input type="radio" class="chkPayment" name="paymentID" value="16"/><label class="lb_r">Thanh toán bằng quét QRCode</label></label>
-    </div>
-    <div class="row " style="padding-bottom:10px;display:none;" id="divVNPay">
-      <div style="margin-top: 5px; margin-left: 35px; font-weight: bold; color: #d57575;">
-        Thẻ tín dụng (VISA/MASTER/JCB) / Thẻ ATM - Dịch vụ của VNPay
-      </div>
-    </div>
-
-    <div style="border:1px solid #ccc;padding: 20px 30px 20px 30px;text-align: justify;word-wrap: break-word;height: 150px;overflow-y: scroll;line-height: 22px">
-      <div id="conditionPayment"></div>
     </div>
   </div>
+
 </div>
 <!-- end chọn hình thức thanh toán -->  
 

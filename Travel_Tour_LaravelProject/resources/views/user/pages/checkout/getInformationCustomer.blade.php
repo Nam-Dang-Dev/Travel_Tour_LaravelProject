@@ -17,13 +17,13 @@
               <div class="col-sm-3 col-xs-12 mg-bot10">
                 <label class="mg-bot5">Họ tên (<span class="price">*</span>)</label>
                 <div>
-                  <input class="form-control" name="[0].fullname" type="text" value="" />
+                  <input class="form-control" name="fullname<?php echo $i; ?>" type="text" value="" />
                 </div>
               </div>
               <div class="col-sm-2 col-xs-12 mg-bot10">
                 <label class="mg-bot5">Giới tính</label>
                 <div>
-                  <select class="form-control" name="[0].gender"><option value="0">Nữ</option>
+                  <select class="form-control" name="gender<?php echo $i; ?>"><option value="0">Nữ</option>
                     <option value="1">Nam</option>
                   </select>
                 </div>
@@ -32,13 +32,13 @@
 
                 <label class="mg-bot5">Ngày sinh (<span class="price">*</span>)</label>
                 <div>
-                  <input type="date" name="birthday" id="birthday" class="form-control" value="" required="required" title="">
+                  <input type="date" name="birthday<?php echo $i; ?>" id="birthday<?php echo $i; ?>" class="form-control" value="" required="required" title="">
                 </div>
               </div>
               <div class="col-sm-2 col-xs-12 mg-bot10">
                 <label class="mg-bot5">Loại khách</label>
                 <div>
-                  <select class="form-control" name="loaikhach" >
+                  <select class="form-control" name="loaikhach<?php echo $i; ?>" >
                     <option value="more12">Lớn hơn 12 tuổi</option>
                     <option value="from5_to_12">5 đến 12 tuổi</option>
                     <option value="from2_to_5">2 đến 5 tuổi</option>
@@ -87,13 +87,13 @@
               <div class="col-sm-3 col-xs-12 mg-bot10">
                 <label class="mg-bot5">Họ tên (<span class="price">*</span>)</label>
                 <div>
-                  <input class="form-control" name="[0].fullname" type="text" value="" />
+                  <input class="form-control" name="fullname0" type="text" value="" />
                 </div>
               </div>
               <div class="col-sm-2 col-xs-12 mg-bot10">
                 <label class="mg-bot5">Giới tính</label>
                 <div>
-                  <select class="form-control" name="[0].gender"><option value="0">Nữ</option>
+                  <select class="form-control" name="gender0"><option value="0">Nữ</option>
                     <option value="1">Nam</option>
                   </select>
                 </div>
@@ -102,13 +102,13 @@
 
                 <label class="mg-bot5">Ngày sinh (<span class="price">*</span>)</label>
                 <div>
-                  <input type="date" name="birthday" id="birthday" class="form-control" value="" required="required" title="">
+                  <input type="date" name="birthday0" id="birthday0" class="form-control" value="" required="required" title="">
                 </div>
               </div>
               <div class="col-sm-2 col-xs-12 mg-bot10">
                 <label class="mg-bot5">Loại khách</label>
                 <div>
-                  <select class="form-control" name="loaikhach" >
+                  <select class="form-control" name="loaikhach0" >
                     <option value="more12">Lớn hơn 12 tuổi</option>
                     <option value="from5_to_12">5 đến 12 tuổi</option>
                     <option value="from2_to_5">2 đến 5 tuổi</option>
