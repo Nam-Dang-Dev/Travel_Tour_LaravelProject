@@ -67,10 +67,6 @@ class PageController extends Controller
       //END ADMIN SITE
 
 
-   public function index(){
-      $backgroundImages = background_image::all();
-         // $backgroundImages = background_image::where('id',1)->get();
-   return view('user.pages.index',compact('backgroundImages'));
-
+   
 
 }
