@@ -130,7 +130,12 @@ Route::group(['prefix' => 'cart/'], function () {
 	Route::get('user/confirm', [
 		'as' 	=> 'cart/user/getConfirm',
 		'uses' 	=> 'reservationController@getConfirm',
-	]);   
+	]);  
+
+	Route::get('user/price', [
+		'as' 	=> 'cart/user/price',
+		'uses' 	=> 'cartController@PostPrice',
+	]);  
 
 
 
