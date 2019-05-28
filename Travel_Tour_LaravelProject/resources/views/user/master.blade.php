@@ -140,6 +140,8 @@
 // Tính giá cho từn customer
 function price($obj)  
 {  
+  var idTour = parseInt(document.getElementById("idTour").value);
+
   alert(idCus);
   var idOption = "loaikhach"+idCus;
   var idDisplayPrice = "price"+idCus;
@@ -149,7 +151,7 @@ function price($obj)
   $.ajax({ 
           type: "get",
           url:"{{route('cart/user/price')}}",  
-          data:"id="+idCus +"& typeTourist="+tourist,
+          data:"id="+idCus +"& typeTourist="+ tourist+"& idTour="+idTour,
           success:function(data){  
             console.log('Error:', data);
            $('#'+idDisplayPrice).html(data);  
