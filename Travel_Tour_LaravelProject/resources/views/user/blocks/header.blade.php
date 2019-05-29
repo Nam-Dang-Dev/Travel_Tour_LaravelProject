@@ -71,20 +71,33 @@
               {{ csrf_field() }}
               <div class="row align-items-center">
                 <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
-
-                  <input type="text" name="diemdi" placeholder="Điểm đi" style="width: 250px; height: 40px; padding-left: 20px" >
-
+                  <div style="width: 250px; height: 40px; padding-left: 20px" >
+                    <select class="chosen_di" style="width: 250px; height: 50px" placeholder="Điểm đi">
+                    @foreach($tours_place as $value_di)
+                    <option>{{$value_di->departure_location}}</option>
+                    @endforeach
+                    </select>
+                  </div>
+                  <script type="text/javascript">
+                        $(".chosen_di").chosen();
+                  </script>
+                </div>
+                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
+                  <div style="width: 250px; height: 40px; padding-left: 20px" >
+                    <select class="chosen_den" style="width: 250px; height: 50px" placeholder="Điểm đến">
+                    @foreach($tours_place as $value_den)
+                    <option>{{$value_den->end_location}}</option>
+                    @endforeach
+                    </select>
+                  </div>
+                  <script type="text/javascript">
+                        $(".chosen_den").chosen();
+                  </script>
                 </div>
                 <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
-                  <div class="select-wrap">
-                    <input type="text" name="diemden" placeholder="Điểm đến" style="width: 250px; height: 40px; padding-left: 20px" >
-                  </div>
-
-                </div>
-                <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
-                  <div class="select-wrap">
-                    <input type="date" id="start" name="date" value="2018-07-22" min="2019-06-01" max="2019-12-31" style="width: 250px; height: 40px; padding-left: 20px">
-                  </div>
+                  <div style="width: 250px; height: 40px; padding-left: 20px" >
+                    <input type="date" id="start" name="date" style="width: 250px; height: 50px"> 
+                  </div>        
                 </div>
               <div class="col-lg-12 col-xl-2 ml-auto text-right">
                 <input type="submit" class="btn btn-primary btn-block rounded" value="Search">

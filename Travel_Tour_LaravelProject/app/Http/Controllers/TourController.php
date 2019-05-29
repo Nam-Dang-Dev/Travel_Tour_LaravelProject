@@ -28,7 +28,11 @@ class TourController extends Controller
 		->select('tours.*', 'prices.more12','prices.promotion')
 		->where('tours.status', 0)
 		->get();
-		return view('user.pages.index',compact('tours'));
+		$tours_place = DB::table('tours')
+		->select('departure_location','end_location')
+		->distinct()
+		->get();
+		return view('user.pages.index',compact('tours','tours_place'));
 	}
 
 
