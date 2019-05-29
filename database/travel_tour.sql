@@ -6,7 +6,7 @@
 -- Thời gian đã tạo: Th5 08, 2019 lúc 10:33 AM
 -- Phiên bản máy phục vụ: 10.1.38-MariaDB
 -- Phiên bản PHP: 7.3.2
-
+create database travel_tour;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
