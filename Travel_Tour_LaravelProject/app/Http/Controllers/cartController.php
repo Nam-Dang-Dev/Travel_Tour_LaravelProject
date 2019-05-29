@@ -17,7 +17,7 @@ class cartController extends Controller
 		->where('tours.id', $idTour)
 		->first();
 
-		echo number_format($price->$typeTourist)." đ";
+		echo $price->$typeTourist;
 
     	
     }

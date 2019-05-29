@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>TTNV &mdash; Old Stuffs</title>
+<!-- <head>
+  <title>TTNV &mdash; Travel Tour</title>
   <link rel="icon" type="image/ico" href="{{asset('user/images/logo.png')}}" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,12 +25,12 @@
 
   <link rel="stylesheet" href=" {{ asset('user/css/style.css') }}">
 
-</head>
+</head> -->
 <body>
 
 
   <head>
-    <title>TTNV &mdash; Old Stuffs</title>
+     <title>TTNV &mdash; Travel Tour</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -76,7 +76,7 @@
     </div>
 
 
-    <script src="{{ asset('user/js/jquery-3.3.1.min.js') }}"></script>
+   <!--  <script src="{{ asset('user/js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('user/js/jquery-migrate-3.0.1.min.js') }}"></script>
     <script src="{{ asset('user/js/jquery-ui.js') }}"></script>
     <script src="{{ asset('user/js/popper.min.js') }}"></script>
@@ -90,7 +90,7 @@
     <script src="{{ asset('user/js/rangeslider.min.js') }}"></script>
 
     <script src="{{ asset('user/js/main.js') }}"></script>
-    
+    <script src="{{ asset('user/js/myAjax.js') }}"></script> -->
   </body>
 
   <script src="{{ asset('public/user/js/jquery-3.3.1.min.js') }}"></script>
@@ -137,6 +137,16 @@
 
   };
 
+function totalPrice(data){
+
+  var idDisplayPrice = "price"+idCus;
+
+  var element = document.getElementById("price0");
+  alert(element.innerHTML);
+  
+}
+
+
 // Tính giá cho từn customer
 function price($obj)  
 {  
@@ -153,8 +163,10 @@ function price($obj)
           url:"{{route('cart/user/price')}}",  
           data:"id="+idCus +"& typeTourist="+ tourist+"& idTour="+idTour,
           success:function(data){  
+            
             console.log('Error:', data);
            $('#'+idDisplayPrice).html(data);  
+           totalPrice(data);
          },
          error: function (data) {
           console.log('Error:', data);
