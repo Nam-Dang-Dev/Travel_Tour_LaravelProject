@@ -20,13 +20,19 @@
 
   <link rel="stylesheet" href=" {{ asset('user/fonts/flaticon/font/flaticon.css') }}">
 
+
+  
+   
+
   <link rel="stylesheet" href=" {{ asset('user/css/aos.css') }}">
   <link rel="stylesheet" href=" {{ asset('user/css/rangeslider.css') }}">
 
   <link rel="stylesheet" href=" {{ asset('user/css/style.css') }}">
 
+<<<<<<< HEAD
 </head> -->
-<body>
+
+
 
 
   <head>
@@ -109,6 +115,8 @@
   <script src="{{ asset('public/user/js/main.js') }}"></script>
   <script src="{{ asset('public/user/js/myAjax.js') }}"></script>
   <script src='https://cdn.jsdelivr.net/npm/sweetalert2'></script>
+
+
   <script>
    var idCus;
    function updateQuantity() {
@@ -185,6 +193,7 @@ $(document).on('click','[data-role=price]',function(){
 
 
 </script>
+
 
 
 </body>
