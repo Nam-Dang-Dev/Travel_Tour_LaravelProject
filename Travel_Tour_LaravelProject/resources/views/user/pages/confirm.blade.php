@@ -93,6 +93,7 @@
 									<tr>
 										<td>Email</td>
 										<td>{{ $row->options->contactEmail}}</td>
+
 									</tr>
 								</tbody>
 							</table>
@@ -128,7 +129,8 @@
 						<tr>
 							<td>Hình thức thanh toán</td>
 							<td>
-								@if($tour_confirm->pay==1)
+								{{$row->options->pay }}
+								@if($row->options->pay ==1)
 									Thanh toán tiền mặt
 								@else
 									Thanh toán online paypal

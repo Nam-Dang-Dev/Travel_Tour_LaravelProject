@@ -20,7 +20,7 @@ class reservationController extends Controller
        $email = $request->email;
        $phone = $request->phone;
        $pay = $request->paymentID;
-
+       $pay = (int)$pay;
        $customerArray = array();
 
        for ($i=0; $i < $quantity; $i++) { 
@@ -38,10 +38,12 @@ class reservationController extends Controller
 
 
        $cart = Cart::content();
-       
+
+ 
        $subject = "Thông tin đặt tour trên website Travel Tour";
-      
-       Mail::to($email)->send(new sendMail($subject));
+      $request->session()->put('key', rand(1000, 9999));
+      $message = $request->session()->get('key');
+       Mail::to($email)->send(new sendMail($subject,$message));
 
 
         $tour_confirm = tour::find($idTour);

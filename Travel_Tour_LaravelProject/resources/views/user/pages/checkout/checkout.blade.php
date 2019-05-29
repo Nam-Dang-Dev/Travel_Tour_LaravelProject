@@ -280,7 +280,7 @@
               <label ><input type="radio" class="chkPayment" name="paymentID" value="1"  /><label class="lb_r">Tiền mặt</label></label>
             </div>
             <div class="radio">
-              <label ><input type="radio" class="chkPayment" name="paymentID" value="2" /><label class="lb_r">Thanh toán online</label></label>
+              <label ><input type="radio" class="chkPayment" name="paymentID" value="2" /><label class="lb_r">Thanh toán paypal</label></label>
             </div>
           </div>
         </div>
