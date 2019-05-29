@@ -142,6 +142,10 @@ Route::group(['prefix' => 'cart/'], function () {
 		'uses' 	=> 'reservationController@getConfirm',
 	]);  
 
+	Route::get('user/numberConfirm', [
+		'as' 	=> 'user/numberConfirm',
+		'uses' 	=> 'reservationController@postNumberConfirm',
+	]);  
 
 	Route::get('user/price', [
 		'as' 	=> 'cart/user/price',

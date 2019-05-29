@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Cart;
+use Cart; 
 use Mail;
 use App\Mail\sendMail;
 use App\tour;
@@ -41,8 +41,10 @@ class reservationController extends Controller
 
  
        $subject = "Thông tin đặt tour trên website Travel Tour";
+
       $request->session()->put('key', rand(1000, 9999));
       $message = $request->session()->get('key');
+
        Mail::to($email)->send(new sendMail($subject,$message));
 
 
@@ -51,6 +53,16 @@ class reservationController extends Controller
       return view('user.pages.confirm',compact('tour_confirm'));
        
 
+   }
+   public function postNumberConfirm(Request $request){
+    $verify = $request->verify;
+    $confirm = $request->session()->get('key');
+    
+    if ($verify == $confirm) {
+      echo 1;
+    }else{
+      echo 0;
+    }
    }
   
 }

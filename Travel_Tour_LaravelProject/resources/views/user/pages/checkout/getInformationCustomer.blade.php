@@ -71,7 +71,7 @@
         <span style="font-weight: bold; font-size: 14px; margin-right: 10px; text-transform: uppercase">Tổng cộng:</span>
         <span style="color: #cd2c24; font-weight: bold; font-size: 20px;float:right"></span>
         <label id="totalPrice" style="color: red;"></label>
-        input
+        
       </div>
     </div>
   </div> <!-- end nhập thông tin liên lạc của khách hàng -->

@@ -1,8 +1,4 @@
-  $(document).ready(function($) {  
-  	alert("message?: DOMString");  
-
-
-  });
+  
   function succes($title) {
 			Swal.fire({
 				
