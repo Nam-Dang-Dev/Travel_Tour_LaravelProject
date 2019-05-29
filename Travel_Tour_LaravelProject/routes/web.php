@@ -84,21 +84,30 @@ Route::group(['prefix' => 'user/'], function () {
 	Route::get('catePage/{id}', [
 		'as' 	=> 'catePage',
 		'uses' 	=> 'categoryController@catePage',
-	]); 
-
-		
 	]);   
 	Route::get('updateQuantity', [
 		'as' 	=> 'user/updateQuantity',
 		'uses' 	=> 'TourController@updateQuantity',
 	]);  
-
-
 	Route::get('profile', function () {
 		return view('user.pages.profile');
 	});
+	//***********************login and singin**********************************////
+	Route::get('login', [
+		'as' 	=> 'user/login',
+		'uses' 	=> 'loginController@getlogin',
+	]); 
+	Route::post('login', [
+		'as' 	=> 'user/login',
+		'uses' 	=> 'loginController@postlogin',
+	]); 
 
 }); 
 
+Route::get('login','LoginController@getLogin')->name('login');
+Route::post('login/handle','LoginController@postLogin')->name('login/handle');
+Route::get('logout','LoginController@logout')->name('logout');
 
-
+Route::get('signup','RegisterController@getSignup')->name('signup');
+Route::post('signup/handle','RegisterController@postSignup')->name('signup/handle');
+//////////////////////////////////////////////////////////////////////////////////////////////////

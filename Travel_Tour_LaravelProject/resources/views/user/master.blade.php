@@ -22,7 +22,7 @@
   <link rel="stylesheet" href=" {{ asset('public/user/css/rangeslider.css') }}">
 
   <link rel="stylesheet" href=" {{ asset('public/user/css/style.css') }}">
-
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </head>
 <body>
@@ -61,7 +61,13 @@
   <script src="{{ asset('public/user/js/main.js') }}"></script>
   <script src="{{ asset('public/user/js/myAjax.js') }}"></script>
   <script src='https://cdn.jsdelivr.net/npm/sweetalert2'></script>
+  <script src="//code.jquery.com/jquery.js"></script>
 
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
  
 
 </body>
