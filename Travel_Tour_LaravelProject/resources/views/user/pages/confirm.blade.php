@@ -1,5 +1,48 @@
 @extends('user.master')
 @section('Content')
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+	body{
+		display: flex;
+		
+		min-height: 100vh;
+		justify-content: center;
+		align-items: center;
+	}
+	.pay-area{
+		display: block;
+		width: 300px;
+		padding: 35px;
+		background: #ffffff;
+	}
+	input{
+		display: block;
+		width: 100%;
+		padding: 5px 15px;
+	}
+	button{
+		padding: 5px 10px;
+		background: #3c3c3c;
+		cursor: pointer;
+		color: #ffffff;
+	}
+	.m-2{
+		margin: 20px auto;
+		display: block;
+	}
+	.error{
+		color: red;
+		font-size: small;
+	}
+	.success{
+		color: green;
+	}
+</style>
+
+
+
 <div class="container">
 
 	<!-- Các bước book tour -->
@@ -120,45 +163,66 @@
 
 				<table class="table" style="margin-top: 20px;">
 					
-						<tbody>
-							<tr>
-								<td>Số khách</td>
-								<td>{{$row->qty}}</td>
-							</tr>
-							<tr>
-								<td>Trị giá booking</td>
-								<td id="totalValue"></td>
-							</tr>
-							
-							<tr>
-								<td>Hình thức thanh toán</td>
+					<tbody>
+						<tr>
+							<td>Số khách</td>
+							<td>{{$row->qty}}</td>
+						</tr>
+						<tr>
+							<td>Trị giá booking</td>
+							<td id="totalValue"></td>
+						</tr>
 
-								<td>
-									
-									@if($row->options->pay ==1)
-									Thanh toán tiền mặt
-									@else
-									Thanh toán online paypal
-									@endif
-								</td>
-							</tr>
-							<tr>
-								<td>Thời hạn thanh toán</td>
-								<td style="color: red;">2 ngày sau khi đặt tour nếu không hệ thống sẽ tự hủy tour</td>
-							</tr>
-						</tbody>
-					</table>
+						<tr>
+							<td>Hình thức thanh toán</td>
+
+							<td>
+
+								@if($row->options->pay ==1)
+								Thanh toán tiền mặt
+								@else
+								Thanh toán online paypal
+								@endif
+							</td>
+						</tr>
+						<tr>
+							<td>Thời hạn thanh toán</td>
+							<td style="color: red;">2 ngày sau khi đặt tour nếu không hệ thống sẽ tự hủy tour</td>
+						</tr>
+					</tbody>
+				</table>
 				
 			</div>
 			
 		</div>
 	</div>
 	<p style="text-align: center;">
-	<div class="row">
-		<a href="#" title="" style="margin-left: 500px;"><button type="button" class="btn btn-danger">Thanh Toán</button></a>
-		
-	</div>
-</p>
+		<div class="row">
+			<!-- <a href="#" title="" style="margin-left: 500px;"><button type="button" class="btn btn-danger">Thanh Toán</button></a> -->
+
+
+			<section class="pay-area">
+				<div>
+					<img height="60" src="{{ asset('paypal-logo.png') }}">
+					@if (session('error') || session('success'))
+					<p class="{{ session('error') ? 'error':'success' }}">
+						{{ session('error') ?? session('success') }}
+					</p>
+					@endif
+					<form method="POST" action="{{ route('create-payment') }}">
+						@csrf
+						<div class="m-2">
+							<input type="text" name="amount" placeholder="Amount">
+							@if ($errors->has('amount'))
+							<span class="error"> {{ $errors->first('amount') }} </span>
+							@endif
+						</div>
+						<button>Pay Now</button>
+					</form>
+				</div>
+			</section>
+		</div>
+	</p>
 
 </div>
 

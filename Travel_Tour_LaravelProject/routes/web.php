@@ -159,6 +159,13 @@ Route::group(['prefix' => 'cart/'], function () {
 	
 }); 
 
+
+Route::view('/checkout', 'checkout-page');
+Route::post('/checkout', 'PaymentController@createPayment')->name('create-payment');
+Route::get('/confirm', 'PaymentController@confirmPayment')->name('confirm-payment');
+
+
+
 Route::get('login','LoginController@getLogin')->name('login');
 Route::post('login/handle','LoginController@postLogin')->name('login/handle');
 Route::get('logout','LoginController@logout')->name('logout');
