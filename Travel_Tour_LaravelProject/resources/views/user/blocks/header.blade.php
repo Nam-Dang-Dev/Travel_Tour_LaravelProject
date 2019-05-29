@@ -152,7 +152,6 @@
                   @endif
                 </div>
               </div>
-
               <div class="row form-group">
                 <div class="col-12">
                   <p>No account yet? <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2"> Register</button></p>
@@ -253,9 +252,3 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
