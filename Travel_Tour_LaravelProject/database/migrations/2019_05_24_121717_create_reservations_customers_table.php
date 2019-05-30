@@ -34,3 +34,4 @@ class CreateReservationsCustomersTable extends Migration
         Schema::dropIfExists('reservations_customers');
     }
 }
+   

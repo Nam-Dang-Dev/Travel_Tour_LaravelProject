@@ -8,7 +8,7 @@ class reservations extends Model
 {
 
 	protected $table = 'reservations';
-	protected $fillabel = ['id','tour_id','cus_id','date','status'];
+	protected $fillabel = ['id','tour_id','date','contact_id','quantity','total','status'];
 
 	public function customer()
 	{
@@ -24,9 +24,9 @@ class reservations extends Model
        return $this->hasMany('App\contact', 'contact_id', 'id');
     }
 
-    public function customer()
-    {
+    // public function customer()
+    // {
         
-        return $this->belongsToMany('App\customer', 'reservations_customer', 'reservations_id', 'customer_id');
-    }
+    //     return $this->belongsToMany('App\customer', 'reservations_customer', 'reservations_id', 'customer_id');
+    // }
 }
