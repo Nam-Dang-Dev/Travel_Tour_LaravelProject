@@ -24,13 +24,15 @@
 			<h3 style="color: red;" >PHIẾU XÁC NHẬN BOOKING</h3>
 			<div class="card"  style="margin-top: 20px;">
 				<div class="card-body">
-					<div>
+					<div id="formVerify" style="display: block;">
 						<form action="" method="POST" role="form">
+							@csrf
 							<div class="form-group">
 								<label for="">Nhập mã xác nhận từ mail</label>
-								<input type="text" class="form-control" id="confirm" name="confirm">
+								<input type="text" class="form-control" id="verify" name="verify">
 							</div>
-							<button type="button" class="btn btn-primary">Xác nhận</button>
+							<p style="text-align: center;"><button type="button"  class="btn btn-primary" id="" data-role="confirm">Xác nhận</button></p>
+							
 						</form>
 					</div>
 					<div>
@@ -79,6 +81,7 @@
 
 								<tbody>
 									<tr>
+										
 										<td>Họ Tên</td>
 										<td>{{ $row->options->contactLastName}} {{ $row->options->contactFirstName}}</td>
 									</tr>
@@ -93,6 +96,7 @@
 									<tr>
 										<td>Email</td>
 										<td>{{ $row->options->contactEmail}}</td>
+
 									</tr>
 								</tbody>
 							</table>
@@ -111,41 +115,50 @@
 
 	<div class="row">
 		<div class="card-body">
-			<h3 style="color: red; text-align: center;" >PHIẾU XÁC NHẬN BOOKING</h3>
+			<h3 style="color: red; text-align: center; margin-top: 20px;" >CHI TIẾT BOOKING</h3>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 				<table class="table" style="margin-top: 20px;">
+					
+						<tbody>
+							<tr>
+								<td>Số khách</td>
+								<td>{{$row->qty}}</td>
+							</tr>
+							<tr>
+								<td>Trị giá booking</td>
+								<td id="totalValue"></td>
+							</tr>
+							
+							<tr>
+								<td>Hình thức thanh toán</td>
 
-					<tbody>
-						<tr>
-							<td>Trị giá booking</td>
-							<td>{{$tour_confirm->id}}</td>
-						</tr>
-						<tr>
-							<td>Ngày đăng kí</td>
-							<td>{{$tour_confirm->created_at}}</td>
-						</tr>
-						<tr>
-							<td>Hình thức thanh toán</td>
-							<td>
-								@if($tour_confirm->pay==1)
+								<td>
+									
+									@if($row->options->pay ==1)
 									Thanh toán tiền mặt
-								@else
+									@else
 									Thanh toán online paypal
-								@endif
-							</td>
-						</tr>
-						<tr>
-							<td>Thời hạn thanh toán</td>
-							<td>{{$tour_confirm->time}}</td>
-						</tr>
-					</tbody>
-				</table>
+									@endif
+								</td>
+							</tr>
+							<tr>
+								<td>Thời hạn thanh toán</td>
+								<td style="color: red;">2 ngày sau khi đặt tour nếu không hệ thống sẽ tự hủy tour</td>
+							</tr>
+						</tbody>
+					</table>
+				
 			</div>
 			
 		</div>
 	</div>
-
+	<p style="text-align: center;">
+	<div class="row">
+		<a href="#" title="" style="margin-left: 500px;"><button type="button" class="btn btn-danger">Thanh Toán</button></a>
+		
+	</div>
+</p>
 
 </div>
 

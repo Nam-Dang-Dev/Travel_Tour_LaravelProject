@@ -34,8 +34,8 @@ class AppServiceProvider extends ServiceProvider
         });
          view()->composer('user.blocks.header',function($view){
             $category = category::all();
-            $backgroundImages = background_image::all();
-         // $backgroundImages = background_image::where('id',1)->get();
+           // $backgroundImages = background_image::all();
+          $backgroundImages = background_image::where('id',1)->first();
            
             $view->with(['category'=>$category,'backgroundImages'=> $backgroundImages]);
 

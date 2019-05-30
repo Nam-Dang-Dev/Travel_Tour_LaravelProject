@@ -11,15 +11,17 @@ class sendMail extends Mailable
 {
     use Queueable, SerializesModels;
     public $sub;
+    public $mes;
    
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($subject)
+    public function __construct($subject, $message)
     {
         $this->sub = $subject;
+        $this->mes = $message;
         
     }
 
@@ -31,7 +33,8 @@ class sendMail extends Mailable
     public function build()
     {
         $m_subject = $this->sub;
+        $m_message = $this->mes;
        
-        return $this->view('user.pages.mail.sendEmail')->subject($m_subject);
+        return $this->view('user.pages.mail.sendEmail',compact('m_message'))->subject($m_subject);
     }
 }

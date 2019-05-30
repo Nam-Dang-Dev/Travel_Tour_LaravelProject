@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Cart;
+use Cart; 
 use Mail;
 use App\Mail\sendMail;
 use App\tour;
@@ -20,7 +20,7 @@ class reservationController extends Controller
        $email = $request->email;
        $phone = $request->phone;
        $pay = $request->paymentID;
-
+       $pay = (int)$pay;
        $customerArray = array();
 
        for ($i=0; $i < $quantity; $i++) { 
@@ -38,10 +38,14 @@ class reservationController extends Controller
 
 
        $cart = Cart::content();
-       
+
+ 
        $subject = "Thông tin đặt tour trên website Travel Tour";
-      
-       Mail::to($email)->send(new sendMail($subject));
+
+      $request->session()->put('key', rand(1000, 9999));
+      $message = $request->session()->get('key');
+
+       Mail::to($email)->send(new sendMail($subject,$message));
 
 
         $tour_confirm = tour::find($idTour);
@@ -49,6 +53,16 @@ class reservationController extends Controller
       return view('user.pages.confirm',compact('tour_confirm'));
        
 
+   }
+   public function postNumberConfirm(Request $request){
+    $verify = $request->verify;
+    $confirm = $request->session()->get('key');
+    
+    if ($verify == $confirm) {
+      echo 1;
+    }else{
+      echo 0;
+    }
    }
   
 }
