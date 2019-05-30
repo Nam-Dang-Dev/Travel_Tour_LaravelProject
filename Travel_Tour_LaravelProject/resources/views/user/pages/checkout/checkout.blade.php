@@ -72,6 +72,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                  {{$tour->id}}
+                 <input type="hidden" name="" id="idTour" class="form-control" value="{{$tour->id}}">
                </div>
              </div>
              <div class="row" style="margin-top: 20px">
@@ -234,7 +235,7 @@
               <div class="col-md-12 col-sm-12 mg-bot15">
                 <label>Số lượng</label>
                 <div>
-                  <input class="form-control" name="quantity" id="quantity" onblur="updateQuantity()"  type="number" value="1" />
+                  <input class="form-control" name="quantity" id="quantity" onblur="updateQuantity()"  type="number" value="0" />
                 </div>
               </div>
 
@@ -267,37 +268,38 @@
       </div>
     </div>
     <div  id="EnterInformation">
-      @include('user.pages.checkout.getInformationCustomer')
+      
     </div>
-    
+    <div class="col-md-10 col-sm-10 col-xs-10 offset-md-1" style="margin-top: 40px;" >
+      <span class="title" style="text-transform: uppercase;">Xin quý khách vui lòng chọn hình thức thanh toán</span>
 
-  </div>
-</div>
-
-<!-- chọn hình thức thanh toán -->    
-<div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 text-center" style="margin: 40px 0 40px 0">
-  <span class="title" style="text-transform: uppercase;">Xin quý khách vui lòng chọn hình thức thanh toán</span>
-
-  <div class="col-xs-12" style="margin-bottom: 30px">
-    <div style="border:1px solid #ccc;padding: 20px 30px 20px 30px; text-align: left;">
-      <div class="form-group">
-        <div class="radio">
-          <label ><input type="radio" class="chkPayment" name="paymentID" value="1"  /><label class="lb_r">Tiền mặt</label></label>
-        </div>
-        <div class="radio">
-          <label ><input type="radio" class="chkPayment" name="paymentID" value="2" /><label class="lb_r">Thanh toán online</label></label>
+      <div class="col-xs-12" style="margin-bottom: 30px">
+        <div style="border:1px solid #ccc;padding: 20px 30px 20px 30px; text-align: left;">
+          <div class="form-group">
+            <div class="radio">
+              <label ><input type="radio" class="chkPayment" name="paymentID" value="1"  /><label class="lb_r">Tiền mặt</label></label>
+            </div>
+            <div class="radio">
+              <label ><input type="radio" class="chkPayment" name="paymentID" value="2" /><label class="lb_r">Thanh toán paypal</label></label>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
-  </div>
+    <!-- end chọn hình thức thanh toán -->  
 
+
+
+
+
+
+
+
+
+    <button style="margin: 20px;" type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
-<!-- end chọn hình thức thanh toán -->  
-
-
-
-<button style="margin: 20px;" type="submit" class="btn btn-primary">Submit</button>
-</form>
 </div>
 
 
