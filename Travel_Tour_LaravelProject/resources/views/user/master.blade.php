@@ -99,7 +99,22 @@
 
     <script src="{{ asset('user/js/main.js') }}"></script>
     <script src="{{ asset('user/js/myAjax.js') }}"></script>
-  </body>
+  </body><!-- 
+  <script src="{{ asset('user/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('user/js/jquery-migrate-3.0.1.min.js') }}"></script>
+    <script src="{{ asset('user/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('user/js/popper.min.js') }}"></script>
+    <script src="{{ asset('user/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('user/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('user/js/jquery.stellar.min.js') }}"></script>
+    <script src="{{ asset('user/js/jquery.countdown.min.js') }}"></script>
+    <script src="{{ asset('user/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('user/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('user/js/aos.js') }}"></script>
+    <script src="{{ asset('user/js/rangeslider.min.js') }}"></script>
+
+    <script src="{{ asset('user/js/main.js') }}"></script>
+    <script src="{{ asset('user/js/myAjax.js') }}"></script> -->
   <script src='https://cdn.jsdelivr.net/npm/sweetalert2'></script>
 
 

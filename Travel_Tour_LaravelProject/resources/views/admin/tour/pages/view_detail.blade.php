@@ -27,7 +27,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+						<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
 							<div class="form-group">
 							
 							<table class="table table-hover">
@@ -53,33 +53,70 @@
 										<th>Ngày khởi hành:</th>
 										<td>{!! $detail_tour["departure_day"] !!}</td>
 									</tr>
+									<tr>
+										<th>Số ngày :</th>
+										<td>{!! $detail_tour["time"] !!}</td>
+									</tr>
+									<tr>
+										<th>Số lượng khách:</th>
+										<td>{!! $detail_tour["quantity_tourist"] !!}</td>
+									</tr>
+									<tr>
+										<th>Loại tour:</th>
+										<td>{!! $category_tour["name"] !!}</td>
+									</tr>
 								</tbody>
 							</table>
 						</div>
 						</div>
-						<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+						<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
 							<div class="form-group">
 								<table class="table table-hover">
 									<tbody>
-										<tr>
-											<th>Số ngày :</th>
-											<td>{!! $detail_tour["time"] !!}</td>
+										
+									<tr>
+											<th rowspan="4" width="150px">Chuyến bay:</th>	
 										</tr>
 										<tr>
-											<th>Số lượng khách:</th>
-											<td>{!! $detail_tour["quantity_tourist"] !!}</td>
+											<th width="150px">Hãng bay</th>
+											<td>{{$flight['name']}}</td>
 										</tr>
 										<tr>
-											<th>Mã chuyến bay:</th>
-											<td>{!! $detail_tour["flight_id"] !!}</td>
+											<th width="150px">Ngày bay đi</th>
+											<td>{{$flight['departure_day']}}</td>
+											
 										</tr>
 										<tr>
-											<th>Mã giá:</th>
-											<td>{!! $detail_tour["price_id"] !!}</td>
+											<th width="150px">Ngày bay về</th>
+											<td>{{$flight['day_back']}}</td>
+										</tr>										
+										<tr>
+											<th width="150px" rowspan="7">Giá-theo độ tuổi:</th>	
 										</tr>
 										<tr>
-											<th>Loại tour:</th>
-											<td>{!! $category_tour["name"] !!}</td>
+											<th width="150px">>12</th>
+											<td>{{$price['more12']}}</td>
+										</tr>
+										<tr>
+											<th width="150px">từ 5-12</th>
+											<td>{{$price['from5_to_12']}}</td>
+											
+										</tr>
+										<tr>
+											<th width="150px">từ 2-5</th>
+											<td>{{$price['from2_to_5']}}</td>
+										</tr>
+										<tr>
+											<th width="150px"><12</th>
+											<td>{!! $price["less2"] !!}</td>
+										</tr>
+										<tr>
+											<th width="150px">khuyến mãi</th>
+											<td>{!! $price["promotion"] !!}%</td>
+										</tr>
+										<tr>
+											<th width="150px">Mô tả</th>
+											<td>{!! $price["description"] !!}</td>
 										</tr>
 									</tbody>
 								</table>
