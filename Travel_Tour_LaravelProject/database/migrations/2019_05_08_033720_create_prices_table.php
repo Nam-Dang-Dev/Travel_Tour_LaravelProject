@@ -20,7 +20,7 @@ class CreatePricesTable extends Migration
             $table->integer('from2_to_5');
             $table->integer('less2');
             $table->integer('promotion')->nullable();
-            $table->string('description',255);
+            $table->longText('description');
             $table->timestamps();
             
         });

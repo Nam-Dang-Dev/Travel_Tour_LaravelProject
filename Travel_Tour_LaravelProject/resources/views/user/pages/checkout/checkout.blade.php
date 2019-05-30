@@ -271,9 +271,9 @@
       
     </div>
    
+      <p style="text-align: center;"><button  type="submit" class="btn btn-primary">Submit</button></p>
 
-
-    <button style="margin: 20px;" type="submit" class="btn btn-primary">Submit</button>
+    
   </form>
 </div>
 </div>

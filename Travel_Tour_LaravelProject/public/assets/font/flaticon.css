@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 30/05/2019 20:54
+  	Creation date: 30/05/2019 20:46
   	*/
 
 @font-face {
@@ -31,6 +31,3 @@ margin-left: 20px;
 }
 
 .flaticon-research:before { content: "\f100"; }
-.flaticon-ticket:before { content: "\f101"; }
-.flaticon-air-freight:before { content: "\f102"; }
-.flaticon-sale:before { content: "\f103"; }

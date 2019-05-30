@@ -17,7 +17,7 @@ class CreatePlacesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('image');
-            $table->string('description',3000);
+            $table->longText('description');
             $table->timestamps();
         });
     }

@@ -8,7 +8,7 @@
 		Đơn đặt tour
 		<small>Đã có 2 đơn đặt tour</small>
 	</h1>
-</section>
+</section>  
 @endsection
  
 <!-- content -->
@@ -37,32 +37,27 @@
 	                      	</tr>
 	                    </thead>
 	                    <tbody>
+	                    	@foreach($orders as $value)
 	                      	<tr>
-		                        <td width="130px"> TN_1</td>
-		                       	<td width="130px"> Cus_1</td>
-		                       	<td width="130px"> 5/8/2018</td>
-		                        <td >1</td>
+		                        <td width="130px"> {{$value->id}}</td>
+		                       	<td width="130px">  {{$value->contact_id}}</td>
+		                       	<td width="130px">{{$value->created_at}}</td>
+		                        <td >
+		                        	@if($value->status == 0)
+		                        		<span style="color: red;">Chờ xác nhận</span>
+		                        	@endif
+		                        </td>
 
 		                        <td>
-		                        	<a href="{!! route('admin/reservation/view_detail')!!}">
+		                        	<a href="{!! route('admin/reservation/view_detail',$value->id)!!}">
 		                        		<i class="fa fa-plus-circle"></i>&nbsp;Xem
 		                        	</a>&nbsp;&nbsp;
-		                          	<a href="#" onclick="javascript:Delete()"><i class="fa fa-trash"></i>&nbsp;Xóa</a>
+		                          	
 		                        </td>
 	                      	</tr> 
-	                      	<tr>
-		                        <td width="130px"> TN_2</td>
-		                       	<td width="130px"> Cus_2</td>
-		                       	<td width="130px"> 12/8/2018</td>
-		                        <td >1</td>
+	                      	
 
-		                        <td>
-		                        	<a href="{!! route('admin/reservation/view_detail')!!}">
-		                        		<i class="fa fa-plus-circle"></i>&nbsp;Xem
-		                        	</a>&nbsp;&nbsp;
-		                          	<a href="#" onclick="javascript:Delete()"><i class="fa fa-trash"></i>&nbsp;Xóa</a>
-		                        </td>
-	                      	</tr> 
+	                      		@endforeach
 	                    </tbody>
                       	
 						

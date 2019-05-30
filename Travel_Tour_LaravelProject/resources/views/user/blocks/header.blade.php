@@ -18,7 +18,7 @@
         @endif
         <div class="col-6 col-xl-2">
           <h1 class="mb-0 site-logo"><a href="{{route('indexUser')}}" class="text-black mb-0">
-           <img height="100px;" src="{{ asset('public/user/images/logo.png') }}" class="img-responsive" alt="Image"> </a></h1>
+           <img height="100px;" src="{{ asset('public/image/logo.png') }}" class="img-responsive" alt="Image"> </a></h1>
          </div>
          <div class="col-12 col-md-10 d-none d-xl-block">
           <nav class="site-navigation position-relative text-right" role="navigation">
@@ -26,7 +26,7 @@
             <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
               <li class="active"><a href="{{route('indexUser')}}">Trang Chủ</a></li>
               <li class="has-children active">
-                  <a href="#">Du lịch</a>
+                  <a href="#">Tour</a>
                   <ul class="dropdown">
                     @foreach($category as $cate)
                     <li><a href="#">{{$cate['name']}}</a></li>
@@ -60,18 +60,25 @@
       <!-- </div> -->
       
     </header>
+
+ 
+
     <div class="site-blocks-cover overlay" style="background-image: url({!! asset('public/image/'.$backgroundImages->image) !!} );" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
+
           <div class="col-md-12">
+
+
             <div class="row justify-content-center mb-4">
               <div class="col-md-8 text-center">
                 <h1 class="" data-aos="fade-up">Nhanh, tiện lợi, cho bạn và cho mọi người</h1>
                 <p data-aos="fade-up" data-aos-delay="100"> Hãy đi những nơi bạn muốn</p>
               </div>
             </div>
-                <div class="form-search-wrap" data-aos="fade-up" data-aos-delay="300">
-                  <form action="{{route('search')}}" method="POST" role="search" >
+
+            <div class="form-search-wrap" data-aos="fade-up" data-aos-delay="200">
+             <form action="{{route('search')}}" method="POST" role="search" >
                     {{ csrf_field() }}
                     <div class="row align-items-center">
                       <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
@@ -107,16 +114,20 @@
                     </div>
             </form>
           </div>
+
         </div>
       </div>
     </div>
+
+  </div>
+  
     <!-- The Modal -->
   <div class="modal" id="myModal" >
     <div class="modal-dialog">
       <div class="modal-content" >
       
         <!-- Modal Header -->
-        <div class="modal-header" ">
+        <div class="modal-header" >
           <h4 class="modal-title"></h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
@@ -180,6 +191,8 @@
       </div>
     </div>
   </div>
+
+
   <!-- Dăng ký  -->
    <!-- The Modal -->
   <div class="modal" id="myModal2">
@@ -248,7 +261,3 @@
       </div>
     </div>
   </div>
-  <script type="text/javascript">
-    $(".chosen_di").chosen();
-    $(".chosen_den").chosen();
-  </script>

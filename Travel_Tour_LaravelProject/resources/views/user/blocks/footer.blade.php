@@ -1,38 +1,20 @@
  
-    <div class="newsletter bg-primary py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <h2>Nhận xét</h2>
-            <p>Quý khách có thể nhận xét chuyến đi qua email</p>
-          </div>
-          <div class="col-md-6">
-            
-            <form class="d-flex">
-              <input type="text" class="form-control" placeholder="Email">
-              <input type="submit" value="Subscribe" class="btn btn-white"> 
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  
     
     <footer class="site-footer">
       <div class="container">
         <div class="row">
               <div class="col-md-5">
-                <h2 class="footer-heading mb-5">About</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident rerum unde possimus molestias dolorem fuga, illo quis fugiat!</p>
+                <h2 class="footer-heading mb-5"></h2>
+                <p>Chúng tôi luôn muốn mang đến cho quý khách những chuyến đi, trải nghiệm thú vị nhất</p>
               </div>
               
               <div class="col-md-4">
-                <h2 class="footer-heading mb-5">Navigations</h2>
+                <h2 class="footer-heading mb-5">Điều hướng</h2>
                 <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Testimonials</a></li>
-                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">Chúng tôi</a></li>
+                  <li><a href="#">Dịch Vụ</a></li>
+                  
+                  <li><a href="#">Liên hệ</a></li>
                 </ul>
               </div>
               <div class="col-md-3">
@@ -48,7 +30,7 @@
             <div class="border-top pt-5">
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Travel Tour</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
             </div>

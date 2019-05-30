@@ -9,6 +9,7 @@ use App\tour;
 use App\flight;
 use App\hotel;
 use App\tour_hotel;
+use App\reservations;
 
 use Input,File;
 
@@ -43,6 +44,7 @@ class TourController extends Controller
 		->first();
 
 		$place = App\tour::find($id)->place()->get();
+		
 		$hotel = App\tour::find($id)->hotel()->get();
 
 
@@ -214,8 +216,8 @@ class TourController extends Controller
 	      $prices_update->save();
 		  return $prices_update;
 		}
-		public function Admin_flight_update(Request $request,$name,$departure_day,$day_back){
-	      $flight_update = price::find($id);
+		public function Admin_flight_update(Request $request,$id,$name,$departure_day,$day_back){
+	      $flight_update = flight::find($id);
 	      $flight_update->name= $request->f_name;
 	      $flight_update->departure_day= $request->f_departure_day;
 	      $flight_update->day_back= $request->day_back;
@@ -237,6 +239,11 @@ class TourController extends Controller
 		   $category_tour=category::find($detail_tour['category_id']);
 		   return view('admin.tour.pages.view_detail',compact('detail_tour','category_tour','price','flight'));
 		}
+
+
+		
+		
+		
 	
 
 }

@@ -285,7 +285,7 @@
               @foreach($samePrice as $value)
                
               <div class="d-block d-md-flex listing vertical">
-                <a href="#" ><img src="{!! asset('public/user/images/'.$value->image) !!} "  class="img-responsive" alt="Image" style="width: 100%; height: 150px "></a>
+                <a href="{{route('Tourdetail',$value->id)}}" ><img src="{!! asset('public/user/images/'.$value->image) !!} "  class="img-responsive" alt="Image" style="width: 100%; height: 150px "></a>
                 <div class="lh-content">
                   <span class="category">{{$value->name}}</span>
                   <a href="listings-single.html">{{  number_format($value->more12)}} đ</a>
@@ -301,7 +301,7 @@
                 @foreach($sameDate as $value)
                
               <div class="d-block d-md-flex listing vertical">
-                <a href="#" ><img src="{!! asset('public/user/images/'.$value->image) !!} "  class="img-responsive" alt="Image" style="width: 100%; height: 150px "></a>
+                <a href="{{route('Tourdetail',$value->id)}}" ><img src="{!! asset('public/user/images/'.$value->image) !!} "  class="img-responsive" alt="Image" style="width: 100%; height: 150px "></a>
                 <div class="lh-content">
                   <span class="category">{{$value->name}}</span>
                   <a href="listings-single.html">{{  number_format($value->more12)}} đ</a>

@@ -7,6 +7,11 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-	Mã xác nhận tour: {{$m_message}}
+	
+		Mã xác nhận tour: {{$m_message}}
+	
+
+
+
 </body>
 </html>

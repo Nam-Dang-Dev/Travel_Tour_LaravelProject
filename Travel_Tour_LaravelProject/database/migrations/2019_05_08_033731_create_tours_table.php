@@ -22,7 +22,7 @@ class CreateToursTable extends Migration
        $table->string('concentrate_place');
        $table->string('time');
        $table->integer('quantity_tourist');
-       $table->string('description',3000);
+       $table->longText('description');
        $table->string('image');
        $table->integer('flight_id')->unsigned();
       

@@ -69,11 +69,11 @@ Route::group(['prefix' => 'admin/tour/'], function () {
 Route::group(['prefix' => 'admin/reservation/'], function () {
 	Route::get('index', [
 		'as' 	=> 'admin/reservation/index',
-		'uses' 	=> 'TourController@Admin_reservation_index',
+		'uses' 	=> 'reservationController@Admin_reservation_index',
 	]); 
-	Route::get('view_detail', [
+	Route::get('view_detail/{idBooking}', [
 		'as' 	=> 'admin/reservation/view_detail',
-		'uses' 	=> 'TourController@Admin_reservation_view_detail',
+		'uses' 	=> 'reservationController@Admin_reservation_view_detail',
 	]);    
 });
 
@@ -152,7 +152,7 @@ Route::group(['prefix' => 'cart/'], function () {
 		'uses' 	=> 'cartController@PostPrice',
 	]);  
 
-	Route::get('payment/{idTour}', [
+	Route::get('payment/{idTour}/{email}', [
 		'as' 	=> 'payment',
 		'uses' 	=> 'reservationController@payment',
 	]); 

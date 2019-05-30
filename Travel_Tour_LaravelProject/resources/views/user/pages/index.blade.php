@@ -105,11 +105,11 @@
     				
     				<div class="listing-item">
     					<div class="listing-image">
-    						<a href="#" class="img d-block"><img src="{!! asset('public/user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="150px"></a>
+    						<a href="{{route('Tourdetail',$value->id)}}" class="img d-block"><img src="{!! asset('public/user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="150px"></a>
     					</div>
     					<div class="listing-item-content">
-    						<a href="#" class="bookmark" data-toggle="tooltip" data-placement="left" title="Bookmark"><span class="icon-heart"></span></a>
-    						<a class="px-3 mb-3 category" href="#">{{$value->name}}</a>
+    						<a href="{{route('Tourdetail',$value->id)}}" class="bookmark" data-toggle="tooltip" data-placement="left" title="Bookmark"><span class="icon-heart"></span></a>
+    						<a class="px-3 mb-3 category" href="{{route('Tourdetail',$value->id)}}">{{$value->name}}</a>
     						<div class="row">
     							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     								<h5 style="color: white">
@@ -148,11 +148,11 @@
     				
     				<div class="listing-item">
     					<div class="listing-image">
-    						  <a href="#" class="img d-block"><img src="{!! asset('public/user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="250px" style="height:350px; "></a>
+    						  <a href="{{route('Tourdetail',$value->id)}}" class="img d-block"><img src="{!! asset('public/user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="250px" style="height:350px; "></a>
     					</div>
     					<div class="listing-item-content">
-    						<a href="#" class="bookmark" data-toggle="tooltip" data-placement="left" title="Bookmark"><span class="icon-heart"></span></a>
-    						<a class="px-3 mb-3 category" href="#">{{$value->name}}</a>
+    						<a href="{{route('Tourdetail',$value->id)}}" class="bookmark" data-toggle="tooltip" data-placement="left" title="Bookmark"><span class="icon-heart"></span></a>
+    						<a class="px-3 mb-3 category" href="{{route('Tourdetail',$value->id)}}">{{$value->name}}</a>
     						<div class="row">
     							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     								<h3 style="color: white">
@@ -213,10 +213,10 @@
       			<div class="col-lg-6">
              
       				<div class="d-block d-md-flex listing" >
-      					<a href="#" class="img d-block"><img src="{!! asset('public/user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="150px"></a>
+      					<a href="{{route('Tourdetail',$value->id)}}" class="img d-block"><img src="{!! asset('public/user/images/'.$value->image) !!} " class="img-responsive" width="270px" height="150px"></a>
       					<div class="lh-content">
       						<span class="category">{{$value->name}}</span>
-      						<a href="#" class="bookmark"><span class="icon-heart"></span></a>
+      						<a href="{{route('Tourdetail',$value->id)}}" class="bookmark"><span class="icon-heart"></span></a>
       						<div class="row">
       							<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
       								<h3><a href="listings-single.html">Giá: 

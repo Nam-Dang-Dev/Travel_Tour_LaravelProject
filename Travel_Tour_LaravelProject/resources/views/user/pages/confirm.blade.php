@@ -150,7 +150,8 @@
 	</div>
 	<p style="text-align: center;">
 	<div class="row">
-		<a href="{{route('payment',$tour_confirm->id)}}" title="" style="margin-left: 500px;"><button type="button" class="btn btn-danger">Thanh Toán</button></a>
+		<a href="{{route('payment',[$tour_confirm->id,$row->options->contactEmail])}}" title="" style="margin-left: 500px;"><button type="button" class="btn btn-danger">Thanh Toán</button></a>
+
 		
 	</div>
 </p>
