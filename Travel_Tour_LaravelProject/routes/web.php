@@ -152,7 +152,10 @@ Route::group(['prefix' => 'cart/'], function () {
 		'uses' 	=> 'cartController@PostPrice',
 	]);  
 
-
+	Route::get('payment/{idTour}', [
+		'as' 	=> 'payment',
+		'uses' 	=> 'reservationController@payment',
+	]); 
 
 
 	

@@ -270,31 +270,7 @@
     <div  id="EnterInformation">
       
     </div>
-    <div class="col-md-10 col-sm-10 col-xs-10 offset-md-1" style="margin-top: 40px;" >
-      <span class="title" style="text-transform: uppercase;">Xin quý khách vui lòng chọn hình thức thanh toán</span>
-
-      <div class="col-xs-12" style="margin-bottom: 30px">
-        <div style="border:1px solid #ccc;padding: 20px 30px 20px 30px; text-align: left;">
-          <div class="form-group">
-            <div class="radio">
-              <label ><input type="radio" class="chkPayment" name="paymentID" value="1"  /><label class="lb_r">Tiền mặt</label></label>
-            </div>
-            <div class="radio">
-              <label ><input type="radio" class="chkPayment" name="paymentID" value="2" /><label class="lb_r">Thanh toán paypal</label></label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <!-- end chọn hình thức thanh toán -->  
-
-
-
-
-
-
-
+   
 
 
     <button style="margin: 20px;" type="submit" class="btn btn-primary">Submit</button>

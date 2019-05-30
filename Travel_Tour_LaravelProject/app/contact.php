@@ -8,7 +8,7 @@ class contact extends Model
 {
     //
     protected $table = 'contacts';
-	protected $fillabel = ['id','first_name','last_name','address','email','phone_number','birthday'];
+	protected $fillabel = ['id','first_name','last_name','address','email','phone_number'];
 
 
     public function reservations()
