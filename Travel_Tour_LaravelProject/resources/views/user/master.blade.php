@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- <head>
+<head>
   <title>TTNV &mdash; Travel Tour</title>
   <link rel="icon" type="image/ico" href="{{asset('user/images/logo.png')}}" />
   <meta charset="utf-8">
@@ -17,6 +17,8 @@
   <link rel="stylesheet" href=" {{ asset('user/css/owl.theme.default.min.css') }}">
 
   <link rel="stylesheet" href=" {{ asset('user/css/bootstrap-datepicker.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.7.0/chosen.min.css">
+
 
   <link rel="stylesheet" href=" {{ asset('user/fonts/flaticon/font/flaticon.css') }}">
 
@@ -29,8 +31,8 @@
 
   <link rel="stylesheet" href=" {{ asset('user/css/style.css') }}">
 
-<<<<<<< HEAD
-</head> -->
+
+</head>
 
 
 
@@ -82,7 +84,7 @@
   </div>
 
 
-   <!--  <script src="{{ asset('user/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('user/js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('user/js/jquery-migrate-3.0.1.min.js') }}"></script>
     <script src="{{ asset('user/js/jquery-ui.js') }}"></script>
     <script src="{{ asset('user/js/popper.min.js') }}"></script>
@@ -96,24 +98,8 @@
     <script src="{{ asset('user/js/rangeslider.min.js') }}"></script>
 
     <script src="{{ asset('user/js/main.js') }}"></script>
-    <script src="{{ asset('user/js/myAjax.js') }}"></script> -->
+    <script src="{{ asset('user/js/myAjax.js') }}"></script>
   </body>
-
-  <script src="{{ asset('public/user/js/jquery-3.3.1.min.js') }}"></script>
-  <script src="{{ asset('public/user/js/jquery-migrate-3.0.1.min.js') }}"></script>
-  <script src="{{ asset('public/user/js/jquery-ui.js') }}"></script>
-  <script src="{{ asset('public/user/js/popper.min.js') }}"></script>
-  <script src="{{ asset('public/user/js/bootstrap.min.js') }}"></script>
-  <script src="{{ asset('public/user/js/owl.carousel.min.js') }}"></script>
-  <script src="{{ asset('public/user/js/jquery.stellar.min.js') }}"></script>
-  <script src="{{ asset('public/user/js/jquery.countdown.min.js') }}"></script>
-  <script src="{{ asset('public/user/js/jquery.magnific-popup.min.js') }}"></script>
-  <script src="{{ asset('public/user/js/bootstrap-datepicker.min.js') }}"></script>
-  <script src="{{ asset('public/user/js/aos.js') }}"></script>
-  <script src="{{ asset('public/user/js/rangeslider.min.js') }}"></script>
-
-  <script src="{{ asset('public/user/js/main.js') }}"></script>
-  <script src="{{ asset('public/user/js/myAjax.js') }}"></script>
   <script src='https://cdn.jsdelivr.net/npm/sweetalert2'></script>
 
 

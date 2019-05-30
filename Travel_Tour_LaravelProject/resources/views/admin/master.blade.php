@@ -21,7 +21,7 @@
    folder instead of downloading all of them to reduce the load. -->
 
    
-   <link rel="stylesheet" href="{{ asset('admin/dist/css/skins/_all-skins.min.css') }}">
+   <!-- <link rel="stylesheet" href="{{ asset('admin/dist/css/skins/_all-skins.min.css') }}">
     <script src="{{asset('assets/js/lib/data-table/datatables.min.js')}}"></script>
     <script src="{{asset('assets/js/lib/data-table/dataTables.bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/js/lib/data-table/dataTables.buttons.min.js')}}"></script>
@@ -31,7 +31,7 @@
     <script src="{{asset('assets/js/lib/data-table/buttons.html5.min.js')}}"></script>
     <script src="{{asset('assets/js/lib/data-table/buttons.print.min.js')}}"></script>
     <script src="{{asset('assets/js/lib/data-table/buttons.colVis.min.js')}}"></script>
-    <script src="{{asset('assets/js/init/datatables-init.js')}}"></script>
+    <script src="{{asset('assets/js/init/datatables-init.js')}}"></script> -->
 
   
 

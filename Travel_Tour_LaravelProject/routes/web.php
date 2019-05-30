@@ -125,7 +125,7 @@ Route::group(['prefix' => 'user/'], function () {
 
 	Route::post('search', [
 		'as' 	=> 'search',
-		'uses' 	=> 'PageController@search',
+		'uses' 	=> 'categoryController@search',
 	]);  
 
 }); 

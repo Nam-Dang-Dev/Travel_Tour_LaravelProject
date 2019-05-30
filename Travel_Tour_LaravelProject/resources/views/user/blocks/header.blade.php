@@ -60,58 +60,56 @@
       <!-- </div> -->
       
     </header>
-
- 
-
     <div class="site-blocks-cover overlay" style="background-image: url({!! asset('public/image/'.$backgroundImages->image) !!} );" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
-
           <div class="col-md-12">
-
-
             <div class="row justify-content-center mb-4">
               <div class="col-md-8 text-center">
                 <h1 class="" data-aos="fade-up">Nhanh, tiện lợi, cho bạn và cho mọi người</h1>
                 <p data-aos="fade-up" data-aos-delay="100"> Hãy đi những nơi bạn muốn</p>
               </div>
             </div>
+                <div class="form-search-wrap" data-aos="fade-up" data-aos-delay="300">
+                  <form action="{{route('search')}}" method="POST" role="search" >
+                    {{ csrf_field() }}
+                    <div class="row align-items-center">
+                      <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
+                        <div style="width: 250px; height: 40px; padding-left: 20px" >
+                          <select class="chosen_di" id="chosen_di" name="chosen_di" style="width: 250px; height: 50px" placeholder="Điểm đi">
+                          <option>Điểm đi</option>
+                          @foreach($departure_location as $value_di)
+                          <option>{{$value_di->departure_location}}</option>
+                          @endforeach
+                          </select>
+                        </div> 
+                      </div>
+                        <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
+                        <div style="width: 250px; height: 40px; padding-left: 20px" >
+                          <select class="chosen_den" id="chosen_den" name="chosen_den" style="width: 250px; height: 50px" placeholder="Điểm đến">
+                          <option>Điểm đến</option>
+                          @foreach($end_location as $value_den)
+                          <option>{{$value_den->end_location}}</option>
+                          @endforeach
 
-            <div class="form-search-wrap" data-aos="fade-up" data-aos-delay="200">
-              <form method="post">
-                <div class="row align-items-center">
-                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
+                        <div style="width: 250px; height: 40px; padding-left: 20px" >
+                          <input type="date" id="start" name="date" style="width: 250px; height: 50px" value=""> 
+                        </div>        
+                      </div>
+                      <div class="col-lg-12 col-xl-2 ml-auto text-right">
+                        <input type="submit" class="btn btn-primary btn-block rounded" value="Search">
+                      </div> 
 
-                    <input type="text" name="diemdi" placeholder="Điểm đi" style="width: 250px; height: 40px; padding-left: 20px" >
-                    
-                  </div>
-                  <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
-                    <div class="select-wrap">
-                      <input type="text" name="diemden" placeholder="Điểm đến" style="width: 250px; height: 40px; padding-left: 20px" >
-                      
-                    </select>
-                  </div>
-
-                </div>
-                <div class="col-lg-12 mb-4 mb-xl-0 col-xl-3">
-                  <div class="select-wrap">
-                    <input type="date" id="start" name="trip-start" value="2018-07-22" min="2019-06-01" max="2019-12-31" style="width: 250px; height: 40px; padding-left: 20px">
-                  </div>
-                </div>
-                <div class="col-lg-12 col-xl-2 ml-auto text-right">
-                  <input type="submit" class="btn btn-primary btn-block rounded" value="Search">
-                </div>
-
-              </div>
+                    </div>
             </form>
           </div>
-
         </div>
       </div>
     </div>
-
-  </div>
-  
     <!-- The Modal -->
   <div class="modal" id="myModal" >
     <div class="modal-dialog">
@@ -182,8 +180,6 @@
       </div>
     </div>
   </div>
-
-
   <!-- Dăng ký  -->
    <!-- The Modal -->
   <div class="modal" id="myModal2">
@@ -252,3 +248,7 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+    $(".chosen_di").chosen();
+    $(".chosen_den").chosen();
+  </script>

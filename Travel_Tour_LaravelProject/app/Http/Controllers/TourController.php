@@ -28,6 +28,7 @@ class TourController extends Controller
 		->select('tours.*', 'prices.more12','prices.promotion')
 		->where('tours.status', 0)
 		->get();
+		
 		return view('user.pages.index',compact('tours'));
 	}
 
@@ -185,7 +186,7 @@ class TourController extends Controller
 		public function Admin_tour_delete($id) {
 		    $tour_del = tour::find($id);
 		    $tour_del->delete($id);
-		    return back()->with('success','Xóa tour thành công!');
+		    return back()->with('alert','Xóa tour thành công!');
 		  }
 
 		//2.5 show detail data of tour to detai page
