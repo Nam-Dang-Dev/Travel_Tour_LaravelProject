@@ -1,41 +1,37 @@
 @extends('user.master')
 @section('Content')
 @include('user.blocks.menu')
-<div class="site-section bg-light">
-      <div class="container">
-        @if(isset($details))
-            
-
-        <div class="row">
-          <div class="col-12">
-            <h2 class="h5 mb-4 text-black" style="font-weight: bold">Kết quả tìm kiếm: {{$query}}</h2></h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12  block-13">
-            <div class="owl-carousel nonloop-block-13">
-              @foreach($details as $tour) 
-              @foreach($price as $prices)
-              <div class="d-block d-md-flex listing vertical">
-                <a href="{{route('detail')}}" class="img d-block" style="background-image: url('public/image/{{$tour->image}}')"></a>
+<section class="site-section bg-light" style="margin-top: -100px;">
+  <div class="container">
+  
+    <div class="row mb-5">
+      <div class="col-md-7 text-left border-primary">
+        @if(isset($tours))
+        <h4 class="font-weight-light text-primary" style="text-transform:uppercase;">Tìm ra  {{count($tours)}} kết quả phù hợp</h4>
+       
+      </div>
+    </div>
+    <div class="row mt-5">
+      
+      @foreach($tours as $value1)
+            <div class="col-lg-6">
+              <div class="d-block d-md-flex listing" >
+                <a href="#" class="img d-block"><img src="{!! asset('public/user/images/'.$value1->image) !!} " class="img-responsive" width="270px" height="150px"></a>
                 <div class="lh-content">
-                  <span class="category">{{$tour->departure_location}} - {{$tour->end_location}}</span>
+                  <span class="category">{{$value1->name}}</span>
                   <a href="#" class="bookmark"><span class="icon-heart"></span></a>
                   <div class="row">
-                    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                      <a href="listings-single.html">{{$prices->more12}}</a>
-                    </div>
-                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                      <h3>{{$tour->quantity_tourist}} chỗ</h3>
+                    <div>
+                      <h3>{{$value1->quantity_tourist}} Chổ</h3>
                     </div>
                   </div>
 
                   <div class="row">
-                    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                      <a href="listings-single.html">{{$tour->departure_day}}</a>
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                      <a href="listings-single.html">Ngày: {{$value1->departure_day}}</a>
                     </div>
-                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                      <h3>{{$tour->time}}</h3> 
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                      <h3>{{$value1->time}}</h3> 
                     </div>
                   </div>
                   <p class="mb-0">
@@ -48,30 +44,22 @@
                   </p>
                 </div>
               </div>
-              @endforeach
-              @endforeach
-             
-
-              
-
+            
             </div>
-          </div>
-        </div>
-        @elseif(isset($message))
-        <p>{{$message}}</p>
-        @endif
-      </div>
 
-</div>
-
-
-
-
+          
+      @endforeach      
+      
+    </div>
+    @elseif(isset($message))
+    <p>{{$message}}</p>
+    @endif
+  </div>
+</section>
 
 @endsection
 
 @section('slideAboutUs')
-  @include('user.blocks.slideAboutUs')
+@include('user.blocks.slideAboutUs')
 
 @endsection
-

@@ -78,8 +78,8 @@
 											<td>{!! $detail_tour["price_id"] !!}</td>
 										</tr>
 										<tr>
-											<th>Mã loại tour:</th>
-											<td>{!! $detail_tour["category_id"] !!}</td>
+											<th>Loại tour:</th>
+											<td>{!! $category_tour["name"] !!}</td>
 										</tr>
 									</tbody>
 								</table>
@@ -91,7 +91,7 @@
 							<tbody>
 								<tr>
 									<th style="width: 130px">Mô tả:</th>
-									<td>{!! $detail_tour["description"] !!}									</td>
+									<td>{!! $detail_tour["description"] !!}	</td>
 								</tr>
 							</tbody>
 						</table>

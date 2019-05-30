@@ -125,7 +125,7 @@ Route::group(['prefix' => 'user/'], function () {
 
 	Route::post('search', [
 		'as' 	=> 'search',
-		'uses' 	=> 'PageController@search',
+		'uses' 	=> 'categoryController@search',
 	]);  
 
 }); 
@@ -152,7 +152,10 @@ Route::group(['prefix' => 'cart/'], function () {
 		'uses' 	=> 'cartController@PostPrice',
 	]);  
 
-
+	Route::get('payment/{idTour}', [
+		'as' 	=> 'payment',
+		'uses' 	=> 'reservationController@payment',
+	]); 
 
 
 	

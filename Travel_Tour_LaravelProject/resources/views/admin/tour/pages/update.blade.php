@@ -21,14 +21,22 @@
 					{{ csrf_field() }}
 					<legend>Chỉnh sửa tour</legend>
 					<div class="row">
+						
 						<div class="panel panel-default" >
-								<div class="panel-body" style="text-align: center;">
-									<img style="width: 250px" src="{!! asset('public/user/images/'.$tour_update->image) !!}">
-									<div style="margin-bottom: 50px"></div>
-									<p>Chọn hình ảnh<input id="filebutton" name="image" class="input-file" type="file" style="margin-left: 480px;" value="{!! old ('image',isset($tour_update)?$tour_update['image']:NULL) !!}">
-									</p>
+							<div class="panel-body" style="text-align: center;">
+								<div >
+									<img class="profile-pic" style="margin:auto;"src="{!! asset('public/user/images/'.$tour_update->image) !!}">
 								</div>
-
+								<div class="row">
+									<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+									</div>
+									<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+								       <i class="fa fa-camera upload-button"></i>
+								       <input class="file-upload" type="file" name="image" accept="image/*"
+								        value="{!! old ('image',isset($tour_update)?$tour_update['image']:NULL) !!}"/>
+									</div>
+								</div>    
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -60,7 +68,7 @@
 						    <div class="form-group">
 						      <label class="control-label col-sm-3" for="description">Mô tả:</label>
 						      <div class="col-sm-9">
-						        <textarea rows="7" cols="70" required="required" name="description"  placeholder="Mô tả tour">{!! old ('description',isset($tour_update)?$tour_update['description']:NULL) !!}</textarea>
+						        <textarea rows="7" cols="70" required="required" name="description"  placeholder="Mô tả tour" style="width: 100%">{!! old ('description',isset($tour_update)?$tour_update['description']:NULL) !!}</textarea>
 						      </div>
 						    </div>
 							
@@ -101,7 +109,12 @@
 						    <div class="form-group">
 						      <label class="control-label col-sm-3" for="category_id">Mã loại tour:</label>
 						      <div class="col-sm-9">
-						        <input type="number" class="form-control" required="required" id="category_id" placeholder="Điền mã tour" name="category_id" value="{!! old ('category_id',isset($tour_update)?$tour_update['category_id']:NULL) !!}">
+						        <select name="category_id" style="width: 100%">
+						        	<option value="{{$category_tour['id']}}" >{{$category_tour['name']}}</option>
+						        	@foreach($category as $cate)
+						        	<option value="{{$cate['id']}}">{{$cate['name']}}</option>
+						        	@endforeach
+						        </select>
 						      </div>
 						    </div>
 						    <div class="form-group">

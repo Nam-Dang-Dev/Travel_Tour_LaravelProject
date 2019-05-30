@@ -7,62 +7,115 @@ use Cart;
 use Mail;
 use App\Mail\sendMail;
 use App\tour;
+use App\customer;
+use App\reservations;
+use App\reservations_customer;
+use App\contact;
+use DB;
 
 class reservationController extends Controller
 {
-    public function postAddCart(Request $request, $idTour,$nameTour){
+  public function postAddCart(Request $request, $idTour,$nameTour){
 
-       $quantity = $request->quantity;
-       $firstName = $request->firstName;
-       $lastName = $request->lastName;
-       $address = $request->address;
-       $note = $request->note;
-       $email = $request->email;
-       $phone = $request->phone;
-       $pay = $request->paymentID;
-       $pay = (int)$pay;
-       $customerArray = array();
+   $quantity = $request->quantity;
+   $firstName = $request->firstName;
+   $lastName = $request->lastName;
+   $address = $request->address;
+   $note = $request->note;
+   $email = $request->email;
+   $phone = $request->phone;
+   $pay = $request->paymentID;
+   $pay = (int)$pay;
+   $customerArray = array();
 
-       for ($i=0; $i < $quantity; $i++) { 
-         $fullnameCustomer= 'fullname'.$i;
-         $genderCustomer= 'gender'.$i;
-         $birthdayCustomer= 'birthday'.$i;
-         $loaikhachCustomer= 'loaikhach'.$i;
+   for ($i=0; $i < $quantity; $i++) { 
+     $fullnameCustomer= 'fullname'.$i;
+     $genderCustomer= 'gender'.$i;
+     $birthdayCustomer= 'birthday'.$i;
+     $loaikhachCustomer= 'loaikhach'.$i;
 
-          $customer = array('fullName' =>  $request->$fullnameCustomer, 'gender' => $request->$genderCustomer,'birthday' =>  $request->$birthdayCustomer, 'loaikhach' => $request->$loaikhachCustomer);
-        
-          $customerArray[$i]=$customer;
-       }
-       Cart::add(['id' => $idTour, 'name' => $nameTour, 'qty' => $quantity, 'price' => 0, 'weight' => 0, 'options' => ['contactFirstName' => $firstName,'contactLastName' => $lastName,'contactAddress' => $address,'contactEmail' => $email,'contactPhone' => $phone,'contactNote' => $note,'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),'pay' => $pay, $customerArray]]);
+     $customer = array('fullName' =>  $request->$fullnameCustomer, 'gender' => $request->$genderCustomer,'birthday' =>  $request->$birthdayCustomer, 'loaikhach' => $request->$loaikhachCustomer);
 
-
-
-       $cart = Cart::content();
-
- 
-       $subject = "Thông tin đặt tour trên website Travel Tour";
-
-      $request->session()->put('key', rand(1000, 9999));
-      $message = $request->session()->get('key');
-
-       Mail::to($email)->send(new sendMail($subject,$message));
-
-
-        $tour_confirm = tour::find($idTour);
-
-      return view('user.pages.confirm',compact('tour_confirm'));
-       
-
+     $customerArray[$i]=$customer;
    }
-   public function postNumberConfirm(Request $request){
-    $verify = $request->verify;
-    $confirm = $request->session()->get('key');
-    
-    if ($verify == $confirm) {
-      echo 1;
-    }else{
-      echo 0;
+   Cart::add(['id' => $idTour, 'name' => $nameTour, 'qty' => $quantity, 'price' => 0, 'weight' => 0, 'options' => ['contactFirstName' => $firstName,'contactLastName' => $lastName,'contactAddress' => $address,'contactEmail' => $email,'contactPhone' => $phone,'contactNote' => $note,'created_at' => Carbon::now('Asia/Ho_Chi_Minh'),'cus'=> $customerArray]]);
+
+
+   $cart = Cart::content();
+   //Cart::destroy();
+   $subject = "Thông tin đặt tour trên website Travel Tour";
+
+   $request->session()->put('key', rand(1000, 9999));
+   $message = $request->session()->get('key');
+
+   Mail::to($email)->send(new sendMail($subject,$message));
+
+
+   $tour_confirm = tour::find($idTour);
+
+   return view('user.pages.confirm',compact('tour_confirm'));
+
+
+ }
+ public function postNumberConfirm(Request $request){
+  $verify = $request->verify;
+  $confirm = $request->session()->get('key');
+
+  if ($verify == $confirm) {
+
+    $cart = Cart::content();
+
+    foreach($cart as $cus){
+      $contact = new contact;
+
+      $contact->first_name = $cus->options->contactFirstName;
+      $contact->last_name = $cus->options->contactLastName;
+      $contact->address = $cus->options->contactAddress;
+      $contact->email = $cus->options->contactEmail;
+      $contact->phone_number = $cus->options->contactPhone;
+      $contact->save();
+
+
+      $contact1 = DB::table('contacts')
+      ->select('contacts.id')
+      ->where('email', $cus->options->contactEmail)
+      ->first();
+
+      $dt = Carbon::now('Asia/Ho_Chi_Minh');
+
+      $reservations = new reservations;
+      $reservations->tour_id = (int)$cus->id;
+      $reservations->date = $dt->toDateTimeString();
+
+      $reservations->contact_id =$contact1->id;
+
+
+      $reservations->quantity = (int)$cus->qty;
+
+
+      $reservations->total = 23;
+
+      $reservations->status = 0;
+
+      $reservations->save();
+      Cart::destroy();
+      
     }
-   }
-  
+
+
+    echo 1;
+  }else{
+    echo 0;
+  }
 }
+public function payment($idTour){
+
+    $tours = DB::table('tours')
+    ->select('tours.*')
+    ->where('id', $idTour)
+    ->first();
+   
+  return view('user.pages.checkout.pay',compact('tours'));
+}
+}
+

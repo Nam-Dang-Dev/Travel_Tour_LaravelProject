@@ -34,7 +34,7 @@
               <input type="text" class="form-control" id="">
                <label for="">Địa chỉ: </label>
               <input type="text" class="form-control" id=""  name="name">
-              <label for="">Gmail: </label>
+              <label for="">Email: </label>
               <input type="text" class="form-control" id="">
                <label for="">Ngày sinh: </label>
               <input type="text" class="form-control" id=""  name="name">

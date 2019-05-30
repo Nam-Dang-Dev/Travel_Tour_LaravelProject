@@ -134,12 +134,7 @@
 								<td>Hình thức thanh toán</td>
 
 								<td>
-									
-									@if($row->options->pay ==1)
 									Thanh toán tiền mặt
-									@else
-									Thanh toán online paypal
-									@endif
 								</td>
 							</tr>
 							<tr>
@@ -155,7 +150,7 @@
 	</div>
 	<p style="text-align: center;">
 	<div class="row">
-		<a href="#" title="" style="margin-left: 500px;"><button type="button" class="btn btn-danger">Thanh Toán</button></a>
+		<a href="{{route('payment',$tour_confirm->id)}}" title="" style="margin-left: 500px;"><button type="button" class="btn btn-danger">Thanh Toán</button></a>
 		
 	</div>
 </p>
