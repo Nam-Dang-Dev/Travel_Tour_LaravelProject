@@ -28,6 +28,10 @@
 						
 						<tbody>
 							<tr>
+								<td>Mã Booking</td>
+								<td>123456800</td>
+							</tr>
+							<tr>
 								<td>Mã tour</td>
 								<td>{{$tours->id}}</td>
 							</tr>
@@ -67,36 +71,29 @@
 				 <div class="card-headercard bg-primary text-white" style="height: 40px; text-align: center;">Thông tin liên lạc</div>
 				<div class="card-body" style=" height: 550px;">
 					
-				</style>>
+				</style>
 					<table class="table">
 						
 						<tbody>
 							<tr>
-								<td>Giám đốc </td>
-								<td>Lê Thị Thúy Vân</td>
-							</tr>
-							<tr>
-								<td>Người chịu trách nhiệm</td>
-								<td>Trần Thị Thảo</td>
+								<td>Họ tên </td>
+								<td>{{$contact->last_name}} {{$contact->first_name}}</td>
 							</tr>
 							<tr>
 								<td>Địa chỉ</td>
-								<td>101B Lê Hữu Trác</td>
+								<td>{{$contact->address}}</td>
+							</tr>
+							<tr>
+								<td>Email</td>
+								<td>{{$contact->email}}</td>
 							</tr>
 							
 
 							<tr>
 								<td>Số điện thoại liên hệ</td>
-								<td>0185245896</td>
+								<td>{{$contact->phone_number}}</td>
 							</tr>
-							<tr>
-								<td></td>
-								<td>0185458948</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>01235687456</td>
-							</tr>
+							
 						</tbody>
 					</table>
 					

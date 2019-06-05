@@ -9,6 +9,7 @@ use App\tour;
 use App\flight;
 use App\hotel;
 use App\tour_hotel;
+use App\reservations;
 
 use Input,File;
 
@@ -43,6 +44,7 @@ class TourController extends Controller
 		->first();
 
 		$place = App\tour::find($id)->place()->get();
+		
 		$hotel = App\tour::find($id)->hotel()->get();
 
 
@@ -156,11 +158,30 @@ class TourController extends Controller
 		public function Admin_tour_get_update($id){
 	      $tour_update=tour::find($id);
 	      $category_tour=category::find($tour_update['category_id']);
+	      $flight_tour=flight::find($tour_update['flight_id']);
+	      $price_tour=price::find($tour_update['price_id']);
 	      $category=category::all();
-		  return view('admin.tour.pages.update', compact('tour_update','id','category','category_tour'));
+		  return view('admin.tour.pages.update', compact('tour_update','id','category','category_tour','flight_tour','price_tour'));
 		}
 		public function Admin_tour_post_update($id,Request $request){
 	      $tour_update=tour::find($id);
+		//Price
+		  $more12= $request->more12;
+	      $from5_to_12= $request->from5_to_12;
+	      $from2_to_5= $request->from2_to_5;
+	      $less2= $request->less2;
+	      $promotion= $request->promotion;
+	      $p_description= $request->p_description;
+		  $price=$this->Admin_price_update($request,$tour_update['price_id'],$more12,$from5_to_12,$from2_to_5,$less2,$promotion,$p_description);
+
+		//Flight
+
+		  $f_name= $request->f_name;
+	      $f_departure_day= $request->f_departure_day;
+	      $day_back= $request->day_back;
+		  $flight=$this->Admin_flight_update($request,$tour_update['flight_id'],$f_name,$f_departure_day,$day_back);
+
+		//Tour
 	      $tour_update->name= $request->name;
 	      $image= $request->image;
 	      if ($image!=null) {
@@ -175,12 +196,33 @@ class TourController extends Controller
 	      $tour_update->time= $request->time;
 	      $tour_update->quantity_tourist= $request->quantity_tourist;
 	      $tour_update->description= $request->description;
-	      $tour_update->flight_id= $request->flight_id;
-	      $tour_update->price_id= $request->price_id;
+	      $tour_update->flight_id= $flight['id'];;
+	      $tour_update->price_id= $price['id'];
 	      $tour_update->category_id= $request->category_id;
 	      $tour_update->status= 0;
 	      $tour_update->save();
     	return view('admin.tour.pages.index')->with('success','Sửa sản phẩm thành công!');
+		}
+
+		public function Admin_price_update(Request $request,$id,$more12,$from5_to_12,$from2_to_5,$less2,$promotion,$description){
+	      $prices_update=price::find($id);
+	      $prices_update = new price();
+	      $prices_update->more12= $request->more12;
+	      $prices_update->from5_to_12= $request->from5_to_12;
+	      $prices_update->from2_to_5= $request->from2_to_5;
+	      $prices_update->less2= $request->less2;
+	      $prices_update->promotion= $request->promotion;
+	      $prices_update->description= $request->description;
+	      $prices_update->save();
+		  return $prices_update;
+		}
+		public function Admin_flight_update(Request $request,$id,$name,$departure_day,$day_back){
+	      $flight_update = flight::find($id);
+	      $flight_update->name= $request->f_name;
+	      $flight_update->departure_day= $request->f_departure_day;
+	      $flight_update->day_back= $request->day_back;
+	      $flight_update->save();
+		  return $flight_update;
 		}
 		//2.4 delete tour already exists in database
 		public function Admin_tour_delete($id) {
@@ -192,9 +234,16 @@ class TourController extends Controller
 		//2.5 show detail data of tour to detai page
 		public function Admin_tour_view_detail($id){
 		   $detail_tour = tour::find($id);
+		   $price = price::find($detail_tour['price_id']);
+		   $flight = flight::find($detail_tour['flight_id']);
 		   $category_tour=category::find($detail_tour['category_id']);
-		   return view('admin.tour.pages.view_detail',compact('detail_tour','category_tour'));
+		   return view('admin.tour.pages.view_detail',compact('detail_tour','category_tour','price','flight'));
 		}
+
+
+		
+		
+		
 	
 
 }

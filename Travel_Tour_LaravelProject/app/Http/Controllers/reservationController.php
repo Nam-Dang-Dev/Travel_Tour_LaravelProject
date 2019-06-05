@@ -59,63 +59,126 @@ class reservationController extends Controller
  }
  public function postNumberConfirm(Request $request){
   $verify = $request->verify;
+  $total = $request->total;
   $confirm = $request->session()->get('key');
 
   if ($verify == $confirm) {
 
     $cart = Cart::content();
 
+
     foreach($cart as $cus){
-      $contact = new contact;
-
-      $contact->first_name = $cus->options->contactFirstName;
-      $contact->last_name = $cus->options->contactLastName;
-      $contact->address = $cus->options->contactAddress;
-      $contact->email = $cus->options->contactEmail;
-      $contact->phone_number = $cus->options->contactPhone;
-      $contact->save();
-
-
-      $contact1 = DB::table('contacts')
+     
+      $dupMail = DB::table('contacts')
       ->select('contacts.id')
       ->where('email', $cus->options->contactEmail)
       ->first();
 
-      $dt = Carbon::now('Asia/Ho_Chi_Minh');
-
-      $reservations = new reservations;
-      $reservations->tour_id = (int)$cus->id;
-      $reservations->date = $dt->toDateTimeString();
-
-      $reservations->contact_id =$contact1->id;
-
-
-      $reservations->quantity = (int)$cus->qty;
+      if($dupMail == null){
+        $contact = new contact;
+        $contact->first_name = $cus->options->contactFirstName;
+        $contact->last_name = $cus->options->contactLastName;
+        $contact->address = $cus->options->contactAddress;
+        $contact->email = $cus->options->contactEmail;
+        $contact->phone_number = $cus->options->contactPhone;
+        $contact->save();
 
 
-      $reservations->total = 23;
+        $contact1 = DB::table('contacts')
+        ->select('contacts.id')
+        ->where('email', $cus->options->contactEmail)
+        ->first();
 
-      $reservations->status = 0;
+        $dt = Carbon::now('Asia/Ho_Chi_Minh');
 
-      $reservations->save();
-      Cart::destroy();
-      
-    }
+        $reservations = new reservations;
+        $reservations->tour_id = (int)$cus->id;
+        $reservations->date = $dt->toDateTimeString();
+
+        $reservations->contact_id =$contact1->id;
 
 
-    echo 1;
-  }else{
-    echo 0;
-  }
+        $reservations->quantity = (int)$cus->qty;
+
+
+        $reservations->total = (int)$total;
+
+        $reservations->status = 0;
+
+        $reservations->save();
+        Cart::destroy();
+      }else{
+       $dt = Carbon::now('Asia/Ho_Chi_Minh');
+
+       $reservations = new reservations;
+       $reservations->tour_id = (int)$cus->id;
+       $reservations->date = $dt->toDateTimeString();
+
+       $reservations->contact_id =(int)$dupMail->id;
+
+
+       $reservations->quantity = (int)$cus->qty;
+
+
+       $reservations->total = (int)$total;
+
+       $reservations->status = 0;
+
+       $reservations->save();
+       Cart::destroy();
+     }
+
+
+
+
+   }
+
+
+   echo 1;
+ }else{
+  echo 0;
 }
-public function payment($idTour){
-
-    $tours = DB::table('tours')
-    ->select('tours.*')
-    ->where('id', $idTour)
-    ->first();
-   
-  return view('user.pages.checkout.pay',compact('tours'));
 }
+public function payment($idTour, $email){
+
+  $tours = DB::table('tours')
+  ->select('tours.*')
+  ->where('id', $idTour)
+  ->first();
+
+  $contact = DB::table('contacts')
+  ->select('contacts.*')
+  ->where('email', $email)
+  ->first();
+
+
+  return view('user.pages.checkout.pay',compact('tours','contact'));
+}
+
+public function Admin_reservation_index(){
+
+  $orders = DB::table('reservations')
+  ->orderBy('status')
+  ->get();
+
+
+  return view('admin.reservation.pages.index',compact('orders'));
+}
+
+
+public function Admin_reservation_view_detail($idBooking){
+
+  $book = DB::table('reservations')
+  ->join('contacts', 'reservations.contact_id', '=', 'contacts.id')
+  ->join('tours', 'tours.id', '=', 'reservations.tour_id')
+  ->select('reservations.*', 'contacts.*','tours.*')
+  ->first();
+
+
+  return view('admin.reservation.pages.view_detail',compact('book'));
+}
+
+
+
 }
 

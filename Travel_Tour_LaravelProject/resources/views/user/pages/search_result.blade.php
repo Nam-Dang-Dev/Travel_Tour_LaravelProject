@@ -16,7 +16,7 @@
       @foreach($tours as $value1)
             <div class="col-lg-6">
               <div class="d-block d-md-flex listing" >
-                <a href="#" class="img d-block"><img src="{!! asset('public/user/images/'.$value1->image) !!} " class="img-responsive" width="270px" height="150px"></a>
+                <a href="{{route('Tourdetail',$value1->id)}}" class="img d-block"><img src="{!! asset('public/user/images/'.$value1->image) !!} " class="img-responsive" width="270px" height="150px"></a>
                 <div class="lh-content">
                   <span class="category">{{$value1->name}}</span>
                   <a href="#" class="bookmark"><span class="icon-heart"></span></a>
